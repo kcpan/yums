@@ -1,0 +1,60 @@
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  background-color: rgb(246, 246, 246);
+}
+
+.status{
+  width: 100%;
+  height: 10%;
+  display: inline-block;
+  background-color: rgb(224, 38, 38);
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 9em;
+  vertical-align: middle;
+}
+.groupContainer{
+  display: inline-block;
+  width: 100%;
+  height:10%;
+  background-color: white;
+}
+.group{
+  font-family: 'Roboto', sans-serif;
+  font-size: 6em;
+  color:rgb(147, 0, 0);
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  align-self: center;
+}
+
+.pics{
+  display: inline-block;;
+  width: 100%;
+  height: 700px;
+  margin: 0;
+}
+
+.pics div{
+  width:100%;
+  height:100%;
+  background-size: contain;
+}
+
+.bHold{
+  width: 100%;
+  height:
+}
+
+.vertCenter
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

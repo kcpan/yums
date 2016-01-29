@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  var click = 1;
   $('.pics').slick({
     autoplay: true,
     prevArrow: null,
@@ -9,21 +9,21 @@ $(document).ready(function() {
   });
 
   $('#groupcon').click(function() {
-    var click = 1;
     if (click) {
       $('#groupcon').animate({
         height: '54%'
       });
+      $('#groupvert').removeClass('vertCenter')
       click = 0;
     } else {
       $('#groupcon').animate({
-        height: '-=200px'
+        height: '10%'
       });
+      $('#groupvert').addClass('vertCenter')
       click=1;
     }
     $('html, body').animate({
   		scrollTop: $('#groupcon').offset().top
 		}, 500);
-    $('#groupvert').removeClass('vertCenter')
   });
 });

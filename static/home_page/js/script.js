@@ -12,26 +12,26 @@ $(document).ready(function() {
     if (click) {
       $('#groupcon').animate({
         height: '50%'
-      },750, 'easeOutBounce');
+      },750);
       $('.group').animate({
         top: '10%'
-      },750, 'easeOutBounce');
+      },750);
       click = 0;
       $('html, body').animate({
         scrollTop: $('#groupcon').offset().top
-      }, 750 , 'easeOutBounce');
+      }, 750 );
       $('.group').text('CREATE GROUP -');
     } else {
       $('#groupcon').animate({
         height: '10%'
-      },750 , 'easeOutBounce');
+      },750 );
       $('.group').animate({
         top: '50%'
-      },750, 'easeOutBounce');
+      },750);
       click=1;
       $('html, body').animate({
         scrollTop: $('#fakepad').offset().top
-      }, 750, 'easeOutBounce');
+      }, 750);
       $('.group').text('CREATE GROUP +');
     }
 

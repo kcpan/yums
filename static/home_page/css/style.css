@@ -75,6 +75,8 @@ body {
 .bHold{
   width: 100%;
   height:40%;
+  overflow: hidden;
+  position: relative;
 }
 
 .vote{
@@ -82,6 +84,7 @@ body {
   width: 50%;
   height: 100%;
   margin-right: -4px;
+  float: left;
 }
 
 .random{
@@ -89,6 +92,7 @@ body {
   width: 50%;
   height: 100%;
   margin: 0;
+  float: left;
 }
 
 .vertCenter

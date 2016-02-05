@@ -17,10 +17,23 @@ body {
   align-items: center;
 }
 
+.icon{
+  width:80%;
+  height:40%;
+  background-image: url(../img/logo.png);
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  margin: 0 auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 .title{
   width: 100%;
   margin: 0 auto;
-  margin-top: 25%;
+  margin-top: 17%;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-size: 30vw;
@@ -32,7 +45,7 @@ body {
   width: 60%;
   height: 7.5%;
   margin: 0 auto;
-  margin-top: 60%;
+  margin-top: 10%;
   font-family: 'Roboto', sans-serif;
   font-size: 10vw;
   color: white;

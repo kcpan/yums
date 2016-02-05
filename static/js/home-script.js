@@ -11,28 +11,54 @@ $(document).ready(function() {
   $('#groupcon').click(function() {
     if (click) {
       $('#groupcon').animate({
-        height: '50%'
+        height: '50%',
+      },{
+        duration: 750,
+        complete: function(){
+          $('.group').text('CREATE GROUP -');
+          $('.grpSelect').text('Your Friends will show up here!');
+        }
+      }
+    );
+      $('.bHold').animate({
+        height: '40%'
+      },750);
+      $('.instructions').animate({
+        height: '0%'
       },750);
       $('.group').animate({
         top: '10%'
       },750);
+
       click = 0;
+
       $('html, body').animate({
         scrollTop: $('#groupcon').offset().top
       }, 750 );
-      $('.group').text('CREATE GROUP -');
     } else {
       $('#groupcon').animate({
-        height: '10%'
-      },750 );
+        height: '10%',
+      },{
+        duration: 750,
+        complete: function(){
+          $('.group').text('CREATE GROUP +');
+        }
+      }
+    );
+      $('.bHold').animate({
+        height: '0%'
+      },750);
       $('.group').animate({
         top: '50%'
+      },750);
+      $('.instructions').animate({
+        height: '42%'
       },750);
       click=1;
       $('html, body').animate({
         scrollTop: $('#fakepad').offset().top
       }, 750);
-      $('.group').text('CREATE GROUP +');
+      $('.grpSelect').text('');
     }
 
   });

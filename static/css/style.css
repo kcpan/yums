@@ -13,32 +13,32 @@ body {
 .black{
   width:100%;
   height:100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   align-items: center;
 }
 
 .title{
   width: 100%;
   margin: 0 auto;
-  margin-top: 30%;
+  margin-top: 25%;
   display: inline-block;
   font-family: 'Roboto', sans-serif;
-  font-size: 250;
+  font-size: 30vw;
   color: white;
   text-align: center;
-  align-self: center;
 }
 
 .startbutton{
-  width: 100%;
+  width: 60%;
+  height: 7.5%;
   margin: 0 auto;
-  margin-top: 70%;
-  display: inline-block;
+  margin-top: 60%;
   font-family: 'Roboto', sans-serif;
-  font-size: 50;
+  font-size: 10vw;
   color: white;
   text-align: center;
   align-self: center;
+  background-color: rgb(168, 34, 34);
 }
 
 .helpbutton{

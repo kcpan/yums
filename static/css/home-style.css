@@ -1,0 +1,113 @@
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgb(246, 246, 246);
+  overflow: hidden;
+}
+
+#fakepad{
+  height: 10%;
+  width: 100%;
+  margin: 0;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.statuswrap {
+  width: 100%;
+  height: 10%;
+  position: fixed;
+  z-index: 1001;
+  background-color: rgb(224, 38, 38);
+}
+
+.prof{
+  position: fixed;
+  z-index: 1002;
+  margin-top: -13%;
+  margin-left: 85%;
+}
+
+
+.status{
+  position: fixed;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 15vw;
+  left: 0;
+  top: 0;
+  z-index:1001;
+}
+.groupContainer{
+  display: inline-block;
+  width: 100%;
+  height:10%;
+  background-color: white;
+  z-index:1001;
+}
+.group{
+  font-family: 'Roboto', sans-serif;
+  font-size: 10vw;
+  color:rgb(147, 0, 0);
+  text-align: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
+}
+
+.pics{
+  width: 100%;
+  height: 40%;
+  z-index:1000;
+
+  min-height: 0px;
+}
+
+.pics div{
+  width:100%;
+  height:100%;
+  background-size: contain;
+}
+
+.bHold{
+  width: 100%;
+  height:40%;
+  overflow: hidden;
+  position: relative;
+}
+
+.vote{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  margin-right: -4px;
+  float: left;
+}
+
+.vote img{
+    width: 100%;
+    height: 100%;
+}
+
+.random{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  float: left;
+}
+
+.random img{
+    width: 100%;
+    height: 100%;
+}
+
+.vertCenter
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

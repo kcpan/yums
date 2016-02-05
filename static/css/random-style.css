@@ -34,6 +34,13 @@ body {
   z-index:1001;
 }
 
+.back{
+  height: 40%;
+  margin-left: -20%;
+  margin-right: 10%;
+  margin-bottom:1%;
+}
+
 .vertCenter{
   position: relative;
   top: 50%;

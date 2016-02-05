@@ -23,13 +23,23 @@ body {
   background-color: rgb(224, 38, 38);
 }
 
+.back{
+  height: 40%;
+  margin-left: -20%;
+  margin-right: 10%;
+  margin-bottom:1%;
+}
+
+.hidden{
+  display: hidden;
+}
+
 .prof{
   position: fixed;
   z-index: 1002;
   margin-top: -13%;
   margin-left: 85%;
 }
-
 
 .status{
   position: fixed;
@@ -137,8 +147,4 @@ body {
 
 .instructions ol{
   padding: 0;
-}
-
-.hidden{
-  display: hidden;
 }

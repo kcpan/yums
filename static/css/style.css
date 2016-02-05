@@ -52,6 +52,12 @@ body {
   text-align: center;
   align-self: center;
 }
+
+.link{
+   color:white;
+   text-decoration: none;
+   background-color: none;
+}
 /*
 .1{
   background: url(../img/1.jpg) no-repeat center center fixed;

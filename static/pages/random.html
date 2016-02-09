@@ -21,6 +21,10 @@ http://www.tooplate.com/view/2076-zentro
 	<link rel="stylesheet" href="../css/nivo-lightbox.css">
 	<link rel="stylesheet" href="../css/nivo_themes/default/default.css">
 	<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/random-style.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -51,23 +55,46 @@ http://www.tooplate.com/view/2076-zentro
   	</div>
   </section>
 
-  <div id='fakepad'></div>
+  <!-- form section -->
+	<section id="form" class="parallax-section top-buf">
+    <div class="container">
+			<div class="row">
+        <div class="col-md-12 col-sm-12">
+          <form class="pure-form pure-form-aligned">
+              <fieldset>
+                  <div class="pure-control-group">
+                      <label for="name">Username</label>
+                      <input id="name" type="text" placeholder="Username">
+                  </div>
 
-  <div id='prefcon' class='prefContainer'>
-    <div id='prefvert' class='pref'>
-      SET RESTRICTIONS +
+                  <div class="pure-control-group">
+                      <label for="password">Password</label>
+                      <input id="password" type="password" placeholder="Password">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="email">Email Address</label>
+                      <input id="email" type="email" placeholder="Email Address">
+                  </div>
+
+                  <div class="pure-control-group">
+                      <label for="foo">Supercalifragilistic Label</label>
+                      <input id="foo" type="text" placeholder="Enter something here...">
+                  </div>
+
+                  <div class="pure-controls">
+                      <label for="cb" class="pure-checkbox">
+                          <input id="cb" type="checkbox"> I've read the terms and conditions
+                      </label>
+
+                      <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                  </div>
+              </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <form id='prefForm'>
-      <p>
-          <label class='formItem'>Item: </label> <input type="text" class='formItem'>
-          <span class="remove">Remove</span>
-      </p>
-      <p>
-          <span class="add">Add</span>
-      </p>
-  </form>
+  </section>
 
   <div id='instructions'>
     <ol>

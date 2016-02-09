@@ -8,7 +8,7 @@ $(document).ready(function() {
   });
   $('.group').css('transform','translateY(-50%)');
 
-  $('#groupcon').click(function() {
+  $('#groupvert').click(function() {
     if (click) {
       $('#groupcon').animate({
         height: '50%',

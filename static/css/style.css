@@ -1,90 +1,163 @@
-body {
-  width: 100%;
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.black{
-  width:100%;
-  height:100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  align-items: center;
-}
-
-.icon{
-  width:80%;
-  height:40%;
-  background-image: url(../img/logo.png);
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  margin: 0 auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.title{
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 17%;
-  display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 30vw;
-  color: white;
-  text-align: center;
-}
-
-.startbutton{
-  width: 60%;
-  height: 7.5%;
-  margin: 0 auto;
-  margin-top: 10%;
-  font-family: 'Roboto', sans-serif;
-  font-size: 10vw;
-  color: white;
-  text-align: center;
-  align-self: center;
-  background-color: rgb(168, 34, 34);
-}
-
-.helpbutton{
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 5%;
-  display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 50;
-  color: white;
-  text-align: center;
-  align-self: center;
-}
-
-.link{
-   color:white;
-   text-decoration: none;
-   background-color: none;
-}
 /*
-.1{
-  background: url(../img/1.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
 
-/*div {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+Template 2076 Zentro
+
+http://www.tooplate.com/view/2076-zentro
+
+*/
+
+body
+	{
+		background: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    position: relative;
+	}
+
+.heading {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.subheading {
+  font-size: 16px;
+  padding-bottom: 60px;
+}
+
+p {
+  color: #848484;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  line-height: 28px;
+}
+
+hr {
+	border-top: 2px solid #828282;
+	width: 120px;
+}
+
+#menu, #gallery, #team {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+#menu, #contact {
+  background: #f0f0f0;
+}
+
+.parallax-section {
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+/* preloader section */
+.preloader  {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+                flex-flow: row nowrap;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        background: none repeat scroll 0 0 #fff;
+    }
+.sk-spinner-pulse {
+  width: 40px;
+  height: 40px;
+  background-color: #F6D76B;
+  border-radius: 100%;
+  -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
+          animation: sk-pulseScaleOut 1s infinite ease-in-out; }
+
+@-webkit-keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+@keyframes sk-pulseScaleOut {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; } }
+
+
+/* start navigation */
+.navbar-default {
+  background: rgb(147, 27, 19);
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.04);
+  border: none;
+  margin-bottom: 0;
+}
+.navbar-brand, .navbar-nav li a {
+  line-height: 18px;
+}
+.navbar-default .navbar-brand  {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.navbar-default .navbar-nav li a {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* home section */
+#home {
+  background: url('../images/home-bg.jpg') 50% 0 repeat-y fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+#home h1 {
+	text-align: center;
+  font-size: 20px;
+  letter-spacing: 4px;
+	font-weight: 100;
+  font-style: normal;
+  padding-top: 10px;
+}
+#home .btn {
+  background: transparent;
+  border-radius: 0;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 16px 42px;
+  margin-top: 40px;
+  transition: all 0.4s ease-in-out;
+}
+/*#home .btn:hover {
+  background: #ffffff;
+  color: #202020;
 }*/

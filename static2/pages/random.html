@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/random-style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/random-script.js"></script>
+
+</head>
+
+<body>
+  <div class='statuswrap'>
+    <div class='status vertCenter'>
+      <a href="home.html"><img class='back' src="../img/back.svg"/></a>
+      YUMS
+    </div>
+  </div>
+
+  <div id='fakepad'></div>
+
+  <div id='prefcon' class='prefContainer'>
+    <div id='prefvert' class='pref'>
+      SET RESTRICTIONS +
+    </div>
+  </div>
+
+  <form id='prefForm'>
+      <p>
+          <label class='formItem'>Item: </label> <input type="text" class='formItem'>
+          <span class="remove">Remove</span>
+      </p>
+      <p>
+          <span class="add">Add</span>
+      </p>
+  </form>
+
+  <div id='instructions'>
+    <ol>
+      <li>Press "SET RESTRICTIONS".</li>
+      <li>Select/Input what you don't want.</li>
+      <li>Or leave everything open.</li>
+      <li>Roll!</li>
+    </ol>
+  </div>
+
+  <div class='bHold'>
+    <div class='random' style="background-size: cover;
+    background-repeat: no-repeat; background-position: center
+    center">
+      <a href='random-result.html'>
+        <img src='../img/dice.png' height='100%' width='100%'>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

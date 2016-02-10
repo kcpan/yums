@@ -53,46 +53,31 @@ http://www.tooplate.com/view/2076-zentro
   	</div>
   </section>
 
-  <!-- form section -->
+	<!-- title section -->
 	<section id="form" class="parallax-section top-buf">
+		<div class="container">
+			<div class="row">
+				<div class="title">
+					RESTRICTIONS
+				</div>
+			</div>
+		</div>
+	</section>
+
+  <!-- form section -->
+	<section id="form" class="parallax-section">
     <div class="container">
 			<div class="row">
-        <input type="hidden" name="count" value="1" />
-        <div class="control-group" id="fields">
-          <label class="control-label" for="field1">Nice Multiple Form Fields</label>
-          <div class="controls" id="profs">
-            <form class="input-append pure-form pure-form-aligned">
-              <div id="field">
-								<input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/>
-								<button id="b1" href="#" class="btn add-more res-btn" type="button">+</button>
-							</div>
-            </form>
-          	<br>
-          	<small>Press + to add another form field :)</small>
-          </div>
-        </div>
+				<div class="input_fields_wrap">
+				    <div>
+							<input class="res-field" type="text" name="mytext[]">
+							<!--<a href="#" class="add_field_button">Add More Fields</a>-->
+							<button class="add_field_button">Add</button>
+						</div>
+				</div>
       </div>
     </div>
   </section>
-
-  <div id='instructions'>
-    <ol>
-      <li>Press "SET RESTRICTIONS".</li>
-      <li>Select/Input what you don't want.</li>
-      <li>Or leave everything open.</li>
-      <li>Roll!</li>
-    </ol>
-  </div>
-
-  <div class='bHold'>
-    <div class='random' style="background-size: cover;
-    background-repeat: no-repeat; background-position: center
-    center">
-      <a href='random-result.html'>
-        <img src='../img/dice.png' height='100%' width='100%'>
-      </a>
-    </div>
-  </div>
 
   <!-- JAVASCRIPT JS FILES -->
   <script src="./js/jquery.js"></script>

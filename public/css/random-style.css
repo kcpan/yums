@@ -2,19 +2,6 @@
 	margin-top: 50px;
 }
 
-* {
-  .border-radius(0) !important;
-}
-
-#field {
-  margin:20px;
-}
-
-.input {
+.res-field {
 	width:50%;
-	float:left;
-}
-
-.res-btn {
-	float:right;
 }

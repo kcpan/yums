@@ -24,7 +24,8 @@ $(document).ready(function() {
       if(x < max_fields){ //max input box allowed
           x++; //text box increment
           $(".add-field-button").replaceWith('<button class="remove-field">Remove</button>');
-          $(wrapper).append('<div class="field-line"><span><input class="res-field" type="text" name="mytext[]"/></span><button class="add-field-button">Add</button></div>'); //add input box
+          $(wrapper).append('<div class="field-line"><span class="text-buf"><input class="res-field" type="text" name="mytext[]"/></span>' + 
+                            '<span class="btn-buf"><button class="add-field-button">Add</button></span></div>'); //add input box
       }
     }
 

@@ -22,10 +22,16 @@
 	width: 100%;
 }
 
-span {
+.text-buf {
 	display: table-cell;
   width: 100%;
-  padding: 0px 10px;
+  padding: 10px 10px 0px 10px;
+}
+
+.btn-buf {
+	display: table-cell;
+  width: 100%;
+  padding: 10px 10px 0px 0px;
 }
 
 .res-field {
@@ -33,9 +39,16 @@ span {
 }
 
 .add-field-button {
+	width: 5em;
 	display: table-cell;
 }
 
 .remove-field {
+	width: 5em;
 	display: table-cell;
+}
+
+.btn-hold {
+	display: table;
+	margin: auto;
 }

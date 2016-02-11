@@ -20,11 +20,24 @@ $(document).ready(function() {
         x--;
     })
 
-    function addField() {
+    function addField(){
       if(x < max_fields){ //max input box allowed
           x++; //text box increment
           $(".add-field-button").replaceWith('<button class="remove-field">Remove</button>');
           $(wrapper).append('<div class="field-line"><span><input class="res-field" type="text" name="mytext[]"/></span><button class="add-field-button">Add</button></div>'); //add input box
       }
     }
+
+    $(".roll").click(function(){
+        event.preventDefault();
+        $('.res-field').each(function (){
+          console.log($(this).val());
+        });
+
+        $.get("/yelpsearch/3?city=La%20Jolla", addData);
+    })
 });
+
+function addData(result){
+  console.log(result);
+}

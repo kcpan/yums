@@ -14,6 +14,7 @@ var random = require('./routes/random');
 var randresult = require('./routes/rand-result');
 var yelpsearch = require('./routes/yelpsearch');
 var vote = require('./routes/vote');
+var voteresult = require('./routes/vote-result');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +47,7 @@ app.get('/random', random.view);
 app.get('/rand-result', randresult.view);
 app.get('/yelpsearch/:id', yelpsearch.search);
 app.get('/vote', vote.view);
+app.get('/vote-result', voteresult.view);
 // Example route
 // app.get('/users', user.list);
 

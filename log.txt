@@ -1,0 +1,101 @@
+2016-02-12T08:35:57.958123+00:00 app[web.1]: npm WARN deprecated backwards-incompatible changes made to `npm run-script` and
+2016-02-12T08:35:57.958124+00:00 app[web.1]: npm WARN deprecated semver behavior.
+2016-02-12T08:35:58.015239+00:00 app[web.1]: 
+2016-02-12T08:35:58.015243+00:00 app[web.1]: > IntroHCI@0.0.1 start /app
+2016-02-12T08:35:58.015245+00:00 app[web.1]: > node server.js
+2016-02-12T08:35:58.015245+00:00 app[web.1]: 
+2016-02-12T08:35:58.075284+00:00 app[web.1]: 
+2016-02-12T08:35:58.075536+00:00 app[web.1]: module.js:340
+2016-02-12T08:35:58.075759+00:00 app[web.1]:     throw err;
+2016-02-12T08:35:58.075761+00:00 app[web.1]:           ^
+2016-02-12T08:35:58.077660+00:00 app[web.1]: Error: Cannot find module '/app/server.js'
+2016-02-12T08:35:58.077662+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:338:15)
+2016-02-12T08:35:58.077663+00:00 app[web.1]:     at Function.Module._load (module.js:280:25)
+2016-02-12T08:35:58.077664+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2016-02-12T08:35:58.077665+00:00 app[web.1]:     at startup (node.js:119:16)
+2016-02-12T08:35:58.077666+00:00 app[web.1]:     at node.js:935:3
+2016-02-12T08:35:58.080482+00:00 app[web.1]: 
+2016-02-12T08:35:58.088314+00:00 app[web.1]: npm ERR! Exit status 8
+2016-02-12T08:35:58.089935+00:00 app[web.1]: npm ERR! Failed at the IntroHCI@0.0.1 start script.
+2016-02-12T08:35:58.090029+00:00 app[web.1]: npm ERR! This is most likely a problem with the IntroHCI package,
+2016-02-12T08:35:58.090815+00:00 app[web.1]: npm ERR!     node server.js
+2016-02-12T08:35:58.091198+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2016-02-12T08:35:58.090159+00:00 app[web.1]: npm ERR! not with npm itself.
+2016-02-12T08:35:58.090537+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2016-02-12T08:35:58.090943+00:00 app[web.1]: npm ERR! You can get their info via:
+2016-02-12T08:35:58.091078+00:00 app[web.1]: npm ERR!     npm owner ls IntroHCI
+2016-02-12T08:35:58.091368+00:00 app[web.1]: npm ERR! System Linux 3.13.0-71-generic
+2016-02-12T08:35:58.091536+00:00 app[web.1]: npm ERR! command "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2016-02-12T08:35:58.091877+00:00 app[web.1]: npm ERR! node -v v0.10.42
+2016-02-12T08:35:58.092086+00:00 app[web.1]: npm ERR! npm -v 1.4.29
+2016-02-12T08:35:58.091710+00:00 app[web.1]: npm ERR! cwd /app
+2016-02-12T08:35:58.092245+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2016-02-12T08:35:58.093906+00:00 app[web.1]: npm ERR! 
+2016-02-12T08:35:58.094028+00:00 app[web.1]: npm ERR! Additional logging details can be found in:
+2016-02-12T08:35:58.094154+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2016-02-12T08:35:58.094380+00:00 app[web.1]: npm ERR! not ok code 0
+2016-02-12T08:35:58.816500+00:00 heroku[web.1]: State changed from starting to crashed
+2016-02-12T08:35:58.817529+00:00 heroku[web.1]: State changed from crashed to starting
+2016-02-12T08:35:58.801691+00:00 heroku[web.1]: Process exited with status 1
+2016-02-12T08:35:59.887933+00:00 heroku[web.1]: Starting process with command `npm start`
+2016-02-12T08:36:02.096237+00:00 app[web.1]: module.js:340
+2016-02-12T08:36:02.105049+00:00 app[web.1]: npm ERR! IntroHCI@0.0.1 start: `node server.js`
+2016-02-12T08:36:02.108906+00:00 app[web.1]: npm ERR! 
+2016-02-12T08:36:02.110367+00:00 app[web.1]: npm ERR!     node server.js
+2016-02-12T08:36:02.110451+00:00 app[web.1]: npm ERR! You can get their info via:
+2016-02-12T08:36:02.110550+00:00 app[web.1]: npm ERR!     npm owner ls IntroHCI
+2016-02-12T08:36:02.110771+00:00 app[web.1]: npm ERR! System Linux 3.13.0-71-generic
+2016-02-12T08:36:02.110655+00:00 app[web.1]: npm ERR! There is likely additional logging output above.
+2016-02-12T08:36:02.110885+00:00 app[web.1]: npm ERR! command "/app/.heroku/node/bin/node" "/app/.heroku/node/bin/npm" "start"
+2016-02-12T08:36:02.110999+00:00 app[web.1]: npm ERR! cwd /app
+2016-02-12T08:36:02.111107+00:00 app[web.1]: npm ERR! node -v v0.10.42
+2016-02-12T08:36:02.111445+00:00 app[web.1]: npm ERR! npm -v 1.4.29
+2016-02-12T08:36:02.111559+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2016-02-12T08:36:02.113064+00:00 app[web.1]: npm ERR! 
+2016-02-12T08:36:01.995737+00:00 app[web.1]: npm WARN deprecated This version of npm lacks support for important features,
+2016-02-12T08:36:02.113136+00:00 app[web.1]: npm ERR! Additional logging details can be found in:
+2016-02-12T08:36:02.113220+00:00 app[web.1]: npm ERR!     /app/npm-debug.log
+2016-02-12T08:36:01.995933+00:00 app[web.1]: npm WARN deprecated such as scoped packages, offered by the primary npm
+2016-02-12T08:36:02.113362+00:00 app[web.1]: npm ERR! not ok code 0
+2016-02-12T08:36:01.996241+00:00 app[web.1]: npm WARN deprecated registry. Consider upgrading to at least npm@2, if not the
+2016-02-12T08:36:01.996392+00:00 app[web.1]: npm WARN deprecated latest stable version. To upgrade to npm@2, run:
+2016-02-12T08:36:01.996485+00:00 app[web.1]: npm WARN deprecated 
+2016-02-12T08:36:01.996599+00:00 app[web.1]: npm WARN deprecated   npm -g install npm@latest-2
+2016-02-12T08:36:01.996692+00:00 app[web.1]: npm WARN deprecated 
+2016-02-12T08:36:01.996783+00:00 app[web.1]: npm WARN deprecated To upgrade to the latest stable version, run:
+2016-02-12T08:36:01.996959+00:00 app[web.1]: npm WARN deprecated 
+2016-02-12T08:36:01.997065+00:00 app[web.1]: npm WARN deprecated   npm -g install npm@latest
+2016-02-12T08:36:01.997164+00:00 app[web.1]: npm WARN deprecated 
+2016-02-12T08:36:01.997260+00:00 app[web.1]: npm WARN deprecated (Depending on how Node.js was installed on your system, you
+2016-02-12T08:36:01.997368+00:00 app[web.1]: npm WARN deprecated may need to prefix the preceding commands with `sudo`, or if
+2016-02-12T08:36:01.997485+00:00 app[web.1]: npm WARN deprecated on Windows, run them from an Administrator prompt.)
+2016-02-12T08:36:01.997578+00:00 app[web.1]: npm WARN deprecated 
+2016-02-12T08:36:01.997677+00:00 app[web.1]: npm WARN deprecated If you're running the version of npm bundled with
+2016-02-12T08:36:01.997789+00:00 app[web.1]: npm WARN deprecated Node.js 0.10 LTS, be aware that the next version of 0.10 LTS
+2016-02-12T08:36:01.997900+00:00 app[web.1]: npm WARN deprecated will be bundled with a version of npm@2, which has some small
+2016-02-12T08:36:01.998239+00:00 app[web.1]: npm WARN deprecated semver behavior.
+2016-02-12T08:36:01.997999+00:00 app[web.1]: npm WARN deprecated backwards-incompatible changes made to `npm run-script` and
+2016-02-12T08:36:02.053718+00:00 app[web.1]: 
+2016-02-12T08:36:02.053723+00:00 app[web.1]: > IntroHCI@0.0.1 start /app
+2016-02-12T08:36:02.053724+00:00 app[web.1]: > node server.js
+2016-02-12T08:36:02.095963+00:00 app[web.1]: 
+2016-02-12T08:36:02.053725+00:00 app[web.1]: 
+2016-02-12T08:36:02.096504+00:00 app[web.1]:           ^
+2016-02-12T08:36:02.096502+00:00 app[web.1]:     throw err;
+2016-02-12T08:36:02.097915+00:00 app[web.1]: Error: Cannot find module '/app/server.js'
+2016-02-12T08:36:02.097917+00:00 app[web.1]:     at Function.Module._resolveFilename (module.js:338:15)
+2016-02-12T08:36:02.097918+00:00 app[web.1]:     at Function.Module._load (module.js:280:25)
+2016-02-12T08:36:02.097919+00:00 app[web.1]:     at Function.Module.runMain (module.js:497:10)
+2016-02-12T08:36:02.097920+00:00 app[web.1]:     at startup (node.js:119:16)
+2016-02-12T08:36:02.097921+00:00 app[web.1]:     at node.js:935:3
+2016-02-12T08:36:02.100735+00:00 app[web.1]: 
+2016-02-12T08:36:02.107912+00:00 app[web.1]: npm ERR! Exit status 8
+2016-02-12T08:36:02.109626+00:00 app[web.1]: npm ERR! Failed at the IntroHCI@0.0.1 start script.
+2016-02-12T08:36:02.109689+00:00 app[web.1]: npm ERR! This is most likely a problem with the IntroHCI package,
+2016-02-12T08:36:02.109775+00:00 app[web.1]: npm ERR! not with npm itself.
+2016-02-12T08:36:02.110146+00:00 app[web.1]: npm ERR! Tell the author that this fails on your system:
+2016-02-12T08:36:02.723880+00:00 heroku[web.1]: State changed from starting to crashed
+2016-02-12T08:36:02.722095+00:00 heroku[web.1]: Process exited with status 1
+2016-02-12T08:36:03.996181+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=yumsapp.herokuapp.com request_id=619b8b00-d40b-48bd-9fbd-6ec28db6de0a fwd="128.54.110.175" dyno= connect= service= status=503 bytes=
+2016-02-12T08:36:54.867754+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=yumsapp.herokuapp.com request_id=b5c54b16-08d3-4629-9085-62628d4e9afd fwd="75.85.167.171" dyno= connect= service= status=503 bytes=
+2016-02-12T08:37:06.596265+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=yumsapp.herokuapp.com request_id=cbddb082-274c-42bd-9ef4-d4524c8e2a56 fwd="75.85.167.171" dyno= connect= service= status=503 bytes=

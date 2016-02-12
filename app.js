@@ -18,6 +18,7 @@ var yelpsearch = require('./routes/yelpsearch');
 var vote = require('./routes/vote');
 var voteresult = require('./routes/vote-result');
 var profile = require('./routes/profile');
+var settings = require('./routes/settings');
 // Example route
 // var user = require('./routes/user');
 
@@ -52,6 +53,7 @@ app.get('/yelpsearch/:id', yelpsearch.search);
 app.get('/vote', vote.view);
 app.get('/vote-result', voteresult.view);
 app.get('/profile', profile.view);
+app.get('/settings', settings.view);
 // Example route
 // app.get('/users', user.list);
 

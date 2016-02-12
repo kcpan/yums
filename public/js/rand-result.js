@@ -8,6 +8,7 @@ function searchYelp(){
 }
 
 function addData(result){
+  $('.data').removeClass('sk-spinner sk-spinner-pulse');
   console.log(result);
   var businesses = result['businesses'];
   var chosen = businesses[Math.floor(businesses.length * Math.random())];

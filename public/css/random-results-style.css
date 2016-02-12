@@ -26,5 +26,10 @@
 
 .buts{
   margin-top: 15px;
-  align-content: center;
+  text-align: center;
+}
+
+.data{
+  margin: 0 auto;
+  
 }

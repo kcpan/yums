@@ -21,7 +21,8 @@ http://www.tooplate.com/view/2076-zentro
 	<link rel="stylesheet" href="./css/nivo-lightbox.css">
 	<link rel="stylesheet" href="./css/nivo_themes/default/default.css">
 	<link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/vote-style.css">
+  <link rel="stylesheet" href="./css/random-style.css">
+	<link rel="stylesheet" href="./css/random-results-style.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/forms-nr-min.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 </head>
@@ -58,38 +59,17 @@ http://www.tooplate.com/view/2076-zentro
 		<div class="container">
 			<div class="row">
 				<div class="title">
-					VOTE
+					RESULTS
 				</div>
 			</div>
 		</div>
 	</section>
 
-  <!-- form section -->
-	<section id="form" class="parallax-section form-sec">
-    <div class="container form-cont">
-			<div class="row form-hold">
-				<div class="input-fields-wrap">
-					{{#each restaurants}}
-					<div class="field-line">
-						<span class="text-buf"><input class="res-field" type="text" name="mytext[]" value={{name}}></span>
-						<!--<a href="#" class="add-field-button">Add More Fields</a>-->
-						<span class="check-buf"><input class="our-check" type="checkbox" value=""></span>
-					</div>
-					{{/each}}
-				  <div class="field-line">
-						<span class="text-buf"><input class="res-field" type="text" name="mytext[]"></span>
-						<!--<a href="#" class="add-field-button">Add More Fields</a>-->
-						<span class="btn-buf"><button class="add-field-button">+</button></span>
-					</div>
-				</div>
-      </div>
-    </div>
-  </section>
-
-	<section class="parallax-section btn-hold">
+	<section class="parallax-section">
 		<div class="container">
 			<div class="row">
-				<a href="/vote-result" class="roll smoothScroll btn btn-default">VOTE</a>
+				<div class="data">
+				</div>
 			</div>
 		</div>
 	</section>
@@ -102,7 +82,6 @@ http://www.tooplate.com/view/2076-zentro
   <script src="./js/nivo-lightbox.min.js"></script>
   <script src="./js/wow.min.js"></script>
   <script src="./js/custom.js"></script>
-  <script src="./js/voting.js"></script>
 
 </body>
 </html>

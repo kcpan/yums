@@ -36,5 +36,13 @@
 		{
 			"name": "Trix R4Kids"
 		}
+	],
+	"restaurants": [
+		{
+			"name": "McDonald's"
+		},
+		{
+			"name": "Tajima"
+		}
 	]
 }

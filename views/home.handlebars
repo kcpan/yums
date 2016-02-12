@@ -18,9 +18,7 @@ http://www.tooplate.com/view/2076-zentro
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/animate.min.css">
 	<link rel="stylesheet" href="../css/font-awesome.min.css">
-	<link rel="stylesheet" href="../css/nivo-lightbox.css">
-	<link rel="stylesheet" href="../css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/home-style.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -43,50 +41,63 @@ http://www.tooplate.com/view/2076-zentro
   		</div>
   		<div class="collapse navbar-collapse">
   			<ul class="nav navbar-nav navbar-right">
-  				<li><a href="#home" class="smoothScroll">HOME</a></li>
-          <li><a href="#profile" class="smoothScroll">PROFILE</a></li>
-          <li><a href="#settings" class="smoothScroll">SETTINGS</a></li>
+  				<li><a href="#home" >HOME</a></li>
+          <li><a href="#profile" >PROFILE</a></li>
+          <li><a href="#settings" >SETTINGS</a></li>
+					<li><a href="/" >LOGOUT</a></li>
   			</ul>
   		</div>
   	</div>
   </section>
 
-  <div id='fakepad'></div>
+	<section id='profile'>
+		<div class='container'>
+			<div class='pic col-xs-6'>
+				<img src="../images/gordon.jpg" class="img-responsive center-block" alt="profile">
+			</div>
+			<div class='summary col-xs-6'>
+				<h4>Gordon Ramsey</h4>
+				Times Used: 9000<br/>
+				Friends Online: 0
+				Influence: 9000
+			</div>
+		<div>
+	</section>
 
-  <div class='pics'>
-    <div style="background: url('../img/1.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-    <div style="background: url('../img/2.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-    <div style="background: url('../img/3.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-    <div style="background: url('../img/4.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-    <div style="background: url('../img/5.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-    <div style="background: url('../img/6.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-    <div style="background: url('../img/7.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center"> </div>
-  </div>
+	<section id='group'>
+		<div class='container'>
+		<h1>CREATE GROUP:</h1>
 
-  <div id='groupcon' class='groupContainer'>
-    <div id='groupvert'class='group'>
-      CREATE GROUP +
-    </div>
-    <div class="grpSelect">
-    </div>
-  </div>
+		<div class="row">
+	        <div class="col-md-6">
+	            <div id="custom-search-input">
+	                <div class="input-group col-md-12">
+	                    <input type="text" class="form-control input-lg" placeholder="Search for friend..." />
+	                    <span class="input-group-btn">
+	                        <button class="btn btn-info btn-lg" type="button" href="#">
+	                            <i class="glyphicon glyphicon-search"></i>
+	                        </button>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+		</div>
 
-  <div class='bHold'>
-    <div class='vote' style="background-size:
-    cover; background-repeat: no-repeat; background-position: center
-    center">
-      <a href='vote.html'>
-        <img src='../img/vote.gif'>
-      </a>
-    </div>
-    <div class='random' style="background-size:
-    cover; background-repeat: no-repeat; background-position: center
-    center">
-      <a href='random.html'>
-        <img src='../img/dice.png'>
-      </a>
-    </div>
-  </div>
+		<ul class='checks'>
+		{{#each friends}}
+			<li><label class="checkbox-inline"><input type="checkbox" value="">{{name}}</label></li>
+		{{/each}}
+		</ul>
+		<div class="row">
+			<div class='hold col-xs-6'>
+			<a href="/random" class="roll smoothScroll btn btn-default rand">RANDOM</a>
+			</div>
+
+			<div class='hold col-xs-6'>
+			<a href="#" class="roll smoothScroll btn btn-default vote">VOTE</a>
+			</div>
+		</div>
+	</section>
 
   <!-- JAVASCRIPT JS FILES -->
   <script src="../js/jquery.js"></script>
@@ -95,7 +106,6 @@ http://www.tooplate.com/view/2076-zentro
   <script src="../js/smoothscroll.js"></script>
   <script src="../js/nivo-lightbox.min.js"></script>
   <script src="../js/wow.min.js"></script>
-  <script src="../js/custom.js"></script>
-
+  <script src="../js/home-script.js"></script>
 </body>
 </html>

@@ -8,6 +8,8 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+require('es6-promise').polyfill();
+
 var index = require('./routes/index');
 var home = require('./routes/home');
 var random = require('./routes/random');

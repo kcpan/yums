@@ -19,6 +19,7 @@ function addData(result){
   var rating = chosen.rating_img_url_large;
   var count = chosen.review_count;
   var summary = chosen.snippet_text;
+  var url = chosen.mobile_url;
 
   var addedHTML = '<div class="name">' + name + '</div>' +
                   '<div class="phone">' + phone + '</div>' +
@@ -27,4 +28,5 @@ function addData(result){
                   '<div class="count">' + count + '</div>' +
                   '<div class="summary">' + summary + '</div>';
   $('.data').append(addedHTML);
+  $('.yelp').attr("href", url);
 }

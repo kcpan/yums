@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 .top-buf {
@@ -94,7 +95,7 @@ body {
 }
 
 .btn-hold {
-	height: 30%;
+	height: calc(25vh - 50px);
 	position: relative;
 }
 

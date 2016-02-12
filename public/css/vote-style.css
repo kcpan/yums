@@ -1,0 +1,144 @@
+html,
+body {
+  height: 100%;
+}
+
+.top-buf {
+	margin-top: 50px;
+}
+
+.title {
+	width: 100%;
+	margin-top: 1%;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	border-bottom: 1px solid;
+}
+
+.form-sec {
+	height: 70%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.form-cont {
+	height: 100%;
+}
+
+.form-hold {
+	height: 100%;
+	background-color: #f0eef1;
+}
+
+.input-fields-wrap {
+	width: 100%;
+	padding: 1em;
+}
+
+.field-line {
+	display: table;
+	width: 100%;
+}
+
+.text-buf {
+	display: table-cell;
+  width: 100%;
+  padding: 5px 0px 5px 10px;
+}
+
+.btn-buf {
+	display: table-cell;
+  width: 100%;
+  padding: 5px 10px 5px 0px;
+}
+
+.check-buf {
+  display: table-cell;
+  width: 100%;
+}
+
+.res-field {
+	width: 100%;
+	padding: 0.8em 1em;
+	font-size: 0.9em;
+	outline: none;
+	color: #555;
+	background-color: rgba(73, 39, 76, 0.09);
+	border: none;
+	border-radius: 6px 0 0 6px;
+}
+
+.add-field-button {
+	width: 5em;
+	height: 2.68em;
+	display: table-cell;
+	border-radius: 0 6px 6px 0;
+  background-color: rgb(44, 153, 45);
+	border: none;
+	color: white;
+	text-align: center;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 100%;
+}
+
+.our-check {
+	width: 5.7em;
+	height: 1.5em;
+	display: table-cell;
+	border: none;
+	color: white;
+  margin: none;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.btn-hold {
+	height: 30%;
+	position: relative;
+}
+
+.roll {
+	position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+/* TEMPLATE */
+.signin-form {
+    margin: 4em auto 0;
+    width: 27%;
+    background-color: #f0eef1;
+    padding: 3em;
+}
+.signin-form  ul li{
+	display:block;
+	position: relative;
+	margin-bottom: 1.6em;
+}
+.signin-form input[type="text"], .signin-form input[type="password"] {
+    width: 83%;
+    padding: 0.8em 1em;
+    font-size: 0.9em;
+    outline: none;
+    color: #555;
+    background-color: rgba(73, 39, 76, 0.09);
+    border: none;
+    border-radius: 6px 0 0 6px;
+	font-family: 'Ledger', serif;
+}
+::-webkit-input-placeholder{
+	color:#555 !important;
+	font-size:1em !important;
+}
+.signin-form ul li span {
+    background: url(../images/1.png)#714c75 no-repeat center center;
+    height: 43px;
+    width: 45px;
+    position: absolute;
+    border-radius: 0 6px 6px 0;
+}
+.signin-form ul li span.key{
+    background: url(../images/2.png)#714c75 no-repeat center center;
+}

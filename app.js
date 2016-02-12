@@ -13,6 +13,8 @@ var home = require('./routes/home');
 var random = require('./routes/random');
 var randresult = require('./routes/rand-result');
 var yelpsearch = require('./routes/yelpsearch');
+var vote = require('./routes/vote');
+var profile = require('./routes/profile');
 // Example route
 // var user = require('./routes/user');
 
@@ -44,6 +46,8 @@ app.get('/home', home.view);
 app.get('/random', random.view);
 app.get('/rand-result', randresult.view);
 app.get('/yelpsearch/:id', yelpsearch.search);
+app.get('/vote', vote.view);
+app.get('/profile', profile.view);
 // Example route
 // app.get('/users', user.list);
 

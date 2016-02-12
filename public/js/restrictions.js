@@ -16,16 +16,17 @@ $(document).ready(function() {
 
     $(wrapper).on("click",".remove-field", function(){ //user click on remove text
         event.preventDefault();
-        $(this).parent('div').remove();
+        console.log("hi");
+        $(this).parent('span').parent('div').remove();
         x--;
     })
 
     function addField(){
       if(x < max_fields){ //max input box allowed
           x++; //text box increment
-          $(".add-field-button").replaceWith('<button class="remove-field">Remove</button>');
-          $(wrapper).append('<div class="field-line"><span class="text-buf"><input class="res-field" type="text" name="mytext[]"/></span>' + 
-                            '<span class="btn-buf"><button class="add-field-button">Add</button></span></div>'); //add input box
+          $(".add-field-button").replaceWith('<button class="remove-field">X</button>');
+          $(wrapper).append('<div class="field-line"><span class="text-buf"><input class="res-field" type="text" name="mytext[]"/></span>' +
+                            '<span class="btn-buf"><button class="add-field-button">+</button></span></div>'); //add input box
       }
     }
 

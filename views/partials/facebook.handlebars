@@ -6,6 +6,11 @@
       xfbml      : true,
       version    : 'v2.5'
     });
+
+    FB.Event.subscribe('auth.login', function(resp) {
+        window.location.reload();
+        //window.location = "/home";
+    });
   };
 
   (function(d, s, id){

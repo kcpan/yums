@@ -5,13 +5,21 @@ $(document).ready(function() {
 var userid;
 
 function initializePage(){
-  $(".loginBtn").click(function(e){
+  $(".loginBtn").click(function(){
+    event.preventDefault();
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      if (response.status === 'connected') {
+        window.location = "/home";
+        console.log('Logged in.');
+      }
+      else {
+        FB.login();
+      }
     });
   });
 
-  $(".logoutBtn").click(function(e){
+  $(".logoutBtn").click(function(){
+    event.preventDefault();
     FB.getLoginStatus(function(response) {
       if (response && response.status === 'connected') {
         FB.logout(function(response) {
@@ -24,7 +32,7 @@ function initializePage(){
   window.onload = function(){
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
-        FB.api('/me', {fields: "id,name,picture"}, function(response) {
+        FB.api('/me', {fields: "id,name,picture,friends"}, function(response) {
           console.log('Successful login for: ' + JSON.stringify(response));
           if (response && !response.error) {
             userid = response.id;
@@ -62,12 +70,12 @@ function statusChangeCallback(response) {
   if (response.status == 'connected') {
     // Logged into your app and Facebook.
     //$.get("home");
-    window.top.location = "/home"
+    window.location = "/home"
     console.log("logged in");
   } else if (response.status == 'not_authorized') {
     // The person is logged into Facebook, but not your app.
-    document.getElementById('status').innerHTML = 'Please log ' +
-      'into this app.';
+    //document.getElementById('status').innerHTML = 'Please log ' +
+    //  'into this app.';
 
     FB.login(function(response) {
       statusChangeCallback(response);
@@ -75,9 +83,9 @@ function statusChangeCallback(response) {
   } else {
     // The person is not logged into Facebook, so we're not sure if
     // they are logged into this app or not.
-    document.getElementById('status').innerHTML = 'Please log ' +
-      'into Facebook.';
-
+    //document.getElementById('status').innerHTML = 'Please log ' +
+    //  'into Facebook.';
+    console.log("pls");
     FB.login(function(response) {
       statusChangeCallback(response);
     }, {scope: 'public_profile,user_friends,email'});

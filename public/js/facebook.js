@@ -2,6 +2,8 @@ $(document).ready(function() {
   initializePage();
 });
 
+var userid;
+
 function initializePage(){
   $(".loginBtn").click(function(e){
     FB.getLoginStatus(function(response) {
@@ -10,17 +12,41 @@ function initializePage(){
   });
 
   $(".logoutBtn").click(function(e){
-    FB.logout(function(response){
-      window.top.location = "/";
+    FB.getLoginStatus(function(response) {
+      if (response && response.status === 'connected') {
+        FB.logout(function(response) {
+          document.location.reload();
+        });
+      }
     });
   });
 
   window.onload = function(){
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
-        FB.api('/me', function(response) {
-          console.log('Successful login for: ' + response.name);
+        FB.api('/me', {fields: "id,name,picture"}, function(response) {
+          console.log('Successful login for: ' + JSON.stringify(response));
+          if (response && !response.error) {
+            userid = response.id;
+            $(".fbname").text(response.name);
+            $(".fbimage").attr("src", response.picture.data.url);
+          }
         });
+        /*
+        FB.api("/me/?fields=picture&type=normal", function (response) {
+          console.log(JSON.stringify(response));
+          if (response && !response.error) {
+            console.log("pls");
+            $(".fbimage").attr("src", (response.picture).data.url);
+          }
+        });
+        FB.api("/" + userid + "/picture?type=square", function (response) {
+          console.log((response.data).url);
+          if (response && !response.error) {
+            console.log("pls");
+            $(".fbimage").attr("src", (response.data).url);
+          }
+        });*/
       }
     });
   }

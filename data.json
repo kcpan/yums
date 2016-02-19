@@ -39,10 +39,12 @@
 	],
 	"restaurants": [
 		{
-			"name": "McDonald's"
+			"name": "McDonald's",
+			"vote": "0"
 		},
 		{
-			"name": "Tajima"
+			"name": "Tajima",
+			"vote": "0"
 		}
 	]
 }

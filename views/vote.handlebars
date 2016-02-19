@@ -47,6 +47,7 @@ http://www.tooplate.com/view/2076-zentro
 	</section>
 
   <!-- form section -->
+  	<form action="/vote-result">
 	<section id="form" class="parallax-section form-sec">
     <div class="container form-cont">
 			<div class="row form-hold">
@@ -55,7 +56,7 @@ http://www.tooplate.com/view/2076-zentro
 					<div class="field-line">
 						<span class="text-buf"><input class="res-field" type="text" name="mytext[]" value={{name}}></span>
 						<!--<a href="#" class="add-field-button">Add More Fields</a>-->
-						<span class="check-buf"><input class="our-check" type="checkbox" value=""></span>
+						<span class="check-buf"><input class="our-check" type="checkbox" name="vote-{{name}}" value="1"></span>
 					</div>
 					{{/each}}
 				  <div class="field-line">
@@ -71,10 +72,12 @@ http://www.tooplate.com/view/2076-zentro
 	<section class="parallax-section btn-hold">
 		<div class="container">
 			<div class="row">
-				<a href="/vote-result" class="roll smoothScroll btn btn-default">VOTE</a>
+				<!-- <a href="/vote-result" class="roll smoothScroll btn btn-default">VOTE</a> -->
+				<input type="submit" value="Vote" class="">
 			</div>
 		</div>
 	</section>
+	</form>
 
   <!-- JAVASCRIPT JS FILES -->
   <script src="./js/jquery.js"></script>

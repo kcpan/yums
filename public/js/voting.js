@@ -60,6 +60,19 @@ $(document).ready(function() {
 
         $.get("/yelpsearch/3?city=La%20Jolla", addData);
     })
+
+    $('input[type="checkbox"]').change(function(){
+      this.value = (Number(this.checked));
+    });
+
+
+    $(".our-check").click(function() {
+      var total = 0;
+      $(':checkbox:checked.our-check').each(function() {
+          total += +this.value;
+      });
+      // alert(total);
+    });
 });
 
 function addData(result){

@@ -13,7 +13,9 @@ function initializePage(){
         console.log('Logged in.');
       }
       else {
-        FB.login();
+        FB.login(function(response) {
+          statusChangeCallback(response);
+        }, {scope: 'public_profile,user_friends,email'});
       }
     });
   });

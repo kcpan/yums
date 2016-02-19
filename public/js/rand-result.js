@@ -9,38 +9,44 @@ function searchYelp(){
 
 function addData(result){
   $('.data').removeClass('sk-spinner sk-spinner-pulse');
-  var restr = JSON.parse(localStorage.getItem("resJson"));
-  console.log(restr);
 
-  console.log(result);
-  var businesses = result['businesses'];
-  var chosen;
+  var chosen = JSON.parse(localStorage.getItem("random-result"));
 
-  var done = false;
-  while(!done) {
-    chosen = businesses[Math.floor(businesses.length * Math.random())];
+  if(jQuery.isEmptyObject(chosen)) {
+    var restr = JSON.parse(localStorage.getItem("resJson"));
+    console.log(restr);
 
-    done = true;
-    var categories = chosen.categories;
-    var tags = "";
+    console.log(result);
+    var businesses = result['businesses'];
 
-    for(var i=0; i<categories.length; i++) {
-      var inner = categories[i];
+    var done = false;
+    while(!done) {
+      chosen = businesses[Math.floor(businesses.length * Math.random())];
 
-      for(var j=0; j<inner.length; j++) {
-        tags = tags.concat(inner[j] + " ");
+      done = true;
+      var categories = chosen.categories;
+      var tags = "";
+
+      for(var i=0; i<categories.length; i++) {
+        var inner = categories[i];
+
+        for(var j=0; j<inner.length; j++) {
+          tags = tags.concat(inner[j] + " ");
+        }
       }
-    }
 
-    for(var i=0; i<restr.length; i++) {
-      if(tags.search(restr[i]) != -1) {
-        console.log("conflict!");
-        done = false;
+      for(var i=0; i<restr.length; i++) {
+        if(tags.search(restr[i]) != -1) {
+          console.log("conflict!");
+          done = false;
+        }
       }
     }
   }
-
   console.log(tags);
+
+  localStorage.setItem("random-result",JSON.stringify(chosen));
+  console.log(chosen);
 
   var name = chosen.name;
   var phone = chosen.display_phone;

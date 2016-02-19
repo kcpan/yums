@@ -39,9 +39,11 @@ $(document).ready(function() {
           }
         });
 
+        var chosen = {};
         var resJson = JSON.stringify(restrictions);
         console.log(resJson);
         localStorage.setItem("resJson",resJson);
+        localStorage.setItem("random-result",JSON.stringify(chosen));
 
         //$.get("/yelpsearch/3?city=La%20Jolla", addData);
     })

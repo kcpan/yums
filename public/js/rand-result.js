@@ -30,4 +30,7 @@ function addData(result){
                   '<div class="summary">' + summary + '</div>';
   $('.data').append(addedHTML);
   $('.yelp').attr("href", url);
+
+  var obj = JSON.parse(localStorage.getItem("resJson"));
+  console.log(obj);
 }

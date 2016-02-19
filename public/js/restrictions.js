@@ -16,7 +16,6 @@ $(document).ready(function() {
 
     $(wrapper).on("click",".remove-field", function(){ //user click on remove text
         event.preventDefault();
-        console.log("hi");
         $(this).parent('span').parent('div').remove();
         x--;
     })
@@ -32,11 +31,19 @@ $(document).ready(function() {
 
     $(".roll").click(function(){
         event.preventDefault();
+
+        var restrictions = [];
         $('.res-field').each(function (){
-          console.log($(this).val());
+          if($(this).val()) {
+            restrictions.push($(this).val());
+          }
         });
 
-        $.get("/yelpsearch/3?city=La%20Jolla", addData);
+        var resJson = JSON.stringify(restrictions);
+        console.log(resJson);
+        localStorage.setItem("resJson",resJson);
+
+        //$.get("/yelpsearch/3?city=La%20Jolla", addData);
     })
 });
 

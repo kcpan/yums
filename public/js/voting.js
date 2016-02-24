@@ -54,13 +54,22 @@ $(document).ready(function() {
 
     $(".roll").click(function(){
         event.preventDefault();
-        $('.res-field').each(function (){
-          console.log($(this).val());
+
+        var votes = [];
+        $('.field-line').each(function (){
+          var place = $(".res-field", this).val();
+          var checked = $(".our-check", this).is(":checked");
+          if(place && checked){
+            votes.push(place);
+          }
         });
 
-        $.get("/yelpsearch/3?city=La%20Jolla", addData);
+        var voteJson = JSON.stringify(votes);
+        localStorage.setItem("voteJson",voteJson);
+        //$.get("/yelpsearch/3?city=La%20Jolla", addData);
     })
 
+    /*
     $('input[type="checkbox"]').change(function(){
       this.value = (Number(this.checked));
     });
@@ -72,7 +81,7 @@ $(document).ready(function() {
           total += +this.value;
       });
       // alert(total);
-    });
+    });*/
 });
 
 function addData(result){

@@ -10,8 +10,11 @@ var yelp = new Yelp({
 
 exports.search = function(req, res){
   console.log(req.params.id);
-  console.log(req.query.city);
-  yelp.search({ term: 'food', location: 'La Jolla' })
+  var mterm = req.query.term;
+  var city = req.query.city;
+  console.log(mterm);
+  console.log(city);
+  yelp.search({ term: mterm, location: city })
   .then(function (data) {
     res.json(data);
   })

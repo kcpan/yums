@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 
 function searchYelp(){
-  $.get("/yelpsearch/3?city=La%20Jolla", addData);
+  $.get("/yelpsearch/3?term=food&city=La%20Jolla", addData);
 }
 
 function addData(result){

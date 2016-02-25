@@ -40,6 +40,13 @@ function initializePage(){
             userid = response.id;
             $(".fbname").text(response.name);
             $(".fbimage").attr("src", response.picture.data.url);
+
+            console.log(response.friends.data);
+            var friendslist = response.friends.data;
+            for(var i = 0; i < friendslist.length; i++) {
+              var toadd = '<li><label class="fbfriends checkbox-inline"><input type="checkbox" value="">' + friendslist[i].name + '</label></li>';
+              $(".checks").append(toadd);
+            }
           }
         });
         /*

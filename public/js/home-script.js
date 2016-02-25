@@ -17,6 +17,10 @@ $(function(){
   });
   wow.init();
 
+  $('.chex').click(function(){
+    $(this).parents('li').remove();
+  });
+
   $('#createBtn').click(function(){
       $(this).css({
           background: '#FFFFFF',

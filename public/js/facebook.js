@@ -32,7 +32,6 @@ function initializePage(){
   });
 
   window.onload = function(){
-    console.log("hello")
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
         FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
@@ -55,6 +54,7 @@ function initializePage(){
         console.log("failed to log in");
       }
     });
+
   }
 }
 

@@ -34,7 +34,7 @@ function initializePage(){
   window.onload = function(){
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
-        FB.api('/me', {fields: "id,name,picture,friends"}, function(response) {
+        FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
           console.log('Successful login for: ' + JSON.stringify(response));
           if (response && !response.error) {
             userid = response.id;

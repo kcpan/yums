@@ -14,7 +14,7 @@ exports.search = function(req, res){
   var city = req.query.city;
   console.log(mterm);
   console.log(city);
-  yelp.search({ term: mterm, location: city })
+  yelp.search({ term: 'food', term: mterm, location: city })
   .then(function (data) {
     res.json(data);
   })

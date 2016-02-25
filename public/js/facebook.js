@@ -32,6 +32,7 @@ function initializePage(){
   });
 
   window.onload = function(){
+    console.log("hello")
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
         FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
@@ -49,21 +50,9 @@ function initializePage(){
             }
           }
         });
-        /*
-        FB.api("/me/?fields=picture&type=normal", function (response) {
-          console.log(JSON.stringify(response));
-          if (response && !response.error) {
-            console.log("pls");
-            $(".fbimage").attr("src", (response.picture).data.url);
-          }
-        });
-        FB.api("/" + userid + "/picture?type=square", function (response) {
-          console.log((response.data).url);
-          if (response && !response.error) {
-            console.log("pls");
-            $(".fbimage").attr("src", (response.data).url);
-          }
-        });*/
+      }
+      else{
+        console.log("failed to log in");
       }
     });
   }

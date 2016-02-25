@@ -39,7 +39,7 @@ function initializePage(){
           console.log('Successful login for: ' + JSON.stringify(response));
           if (response && !response.error) {
             userid = response.id;
-            $(".fbname").text(response.name);
+            $(".fbname").text("Hello, " + response.name);
             $(".fbimage").attr("src", response.picture.data.url);
 
             console.log(response.friends.data);

@@ -6,12 +6,13 @@ http://www.tooplate.com/view/2076-zentro
 
 */
 
-body
+body, html
 	{
 		background: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     position: relative;
+		overflow: hidden;
 	}
 
 .heading {
@@ -130,15 +131,26 @@ hr {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 10vh;
+  height: 5vh;
   text-align: center;
-	margin-top: 65px;
+	margin-top: 50px;
 }
 
 #profile .container{
-	background-color: #ffffff;
-	height: 100%;
+	background-color: rgb(255, 93, 93);
+	display:block;
+	overflow:auto;
 	width: 100%;
+	text-align: center;
+	color: white
+}
+
+.fbname{
+	line-height: 100%;
+	margin: 0;
+	top:50%;
+	transform: translateY(-50%);
+	position: relative;
 }
 
 .pic{
@@ -157,29 +169,79 @@ hr {
 	height: 100%;
 }
 
-#group{
-	height: calc(80vh - 65px);
-	margin-top: 15px;
-}
-
-#group .container{
-	background-color: #e3e3e3;
-	height: 100%;
-	width: 100%;
-	text-align: center;
-}
-.checks{
-	text-align: left;
-}
-.checks li {
-	display:inline-block;
-  float: left;
-  width: 50%;
-	margin-top: 5px;
-}
 
 .hold{
 	margin-top: 20px;
+}
+
+#create{
+		height: calc(47.5vh - 25px);
+		background-color: rgb(254, 160, 157);
+		text-align: center;
+		position: relative;
+		transition: all 0.4s ease-in-out;
+}
+
+#join{
+	  height: calc(47.5vh - 25px);
+		background-color: rgb(255, 103, 103);
+		text-align: center;
+		position: relative;
+		transition: all 0.4s ease-in-out;
+}
+
+.container{
+	height: 100%;
+}
+
+#create .specbtn {
+  background: transparent;
+  border-radius: 0;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 16px 42px;
+  transition: all 0.4s ease-in-out;
+}
+
+#join .specbtn {
+  background: transparent;
+  border-radius: 0;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 16px 42px;
+}
+
+.buttonHold{
+	padding: 0
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#radio{
+	margin-top: 10px;
+}
+
+.firstRow{
+	margin-top: 15vh;
+}
+
+.secondRow{
+	margin-top: 20px;
+}
+
+.thirdRow{
+	margin-top: 20px;
+}
+
+.fourthRow{
+	margin-top: 5px;
+	overflow-y: auto;
+	height: 15vh;
 }
 
 #custom-search-input{
@@ -212,4 +274,22 @@ hr {
 
 #custom-search-input .glyphicon-search{
     font-size: 23px;
+		color: black;
+}
+.down{
+	z-index: 100;
+	margin-top: 15px;
+}
+.dTog{
+	width: 100%;
+}
+
+.checks{
+	text-align: left;
+}
+.checks li {
+	display:inline-block;
+  float: left;
+  width: 50%;
+	margin-top: 5px;
 }

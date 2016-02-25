@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<title>YUMS</title>
@@ -8,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-<!--
+	<!--
 
 Template 2076 Zentro
 
@@ -21,84 +22,115 @@ http://www.tooplate.com/view/2076-zentro
 	<link rel="stylesheet" href="../css/home-style.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 	<!-- Facebook SDK -->
 	{{> facebook}}
 
-  <!-- preloader section -->
-  <section class="preloader">
-  	<div class="sk-spinner sk-spinner-pulse"></div>
-  </section>
+	<!-- preloader section -->
+	<section class="preloader">
+		<div class="sk-spinner sk-spinner-pulse"></div>
+	</section>
 
-  <!-- navigation section -->
-  {{> navbar}}
+	<!-- navigation section -->
+	{{> navbar}}
 
 	<section id='profile'>
 		<div class='container'>
-			<div class='pic col-xs-6'>
-				<img src="../images/gordon.jpg" class="img-responsive center-block fbimage" alt="profile">
+			<div class='summary col-xs-12'>
+				<h4 class='fbname'>Hello, FB_NAME</h4>
 			</div>
-			<div class='summary col-xs-6'>
-				<h4 class='fbname'>Gordon Ramsey</h4>
-				Times Used: 9000<br/>
-				Friends Online: 0
-				Influence: 9000
-			</div>
-		<div>
+		</div>
 	</section>
 
-	<section id='group'>
+	<section id='create'>
 		<div class='container'>
-		<h1>CREATE GROUP:</h1>
 
-		<div class="row">
-	        <div class="col-md-6">
-	            <div id="custom-search-input">
-	                <div class="input-group col-md-12">
-	                    <input type="text" class="form-control input-lg" placeholder="Search for friend..." />
-	                    <span class="input-group-btn">
-	                        <button class="btn btn-info btn-lg" type="button" href="#">
-	                            <i class="glyphicon glyphicon-search"></i>
-	                        </button>
-	                    </span>
-	                </div>
-	            </div>
-	        </div>
-		</div>
-
-		<ul class='checks'>
-		{{#each friends}}
-			<li><label class="fbfriends checkbox-inline"><input type="checkbox" value="">{{name}}</label></li>
-		{{/each}}
-		</ul>
-		<div class="row">
-			<!--<div class='hold col-xs-6'>
-			<a href="/random" class="roll smoothScroll btn btn-default rand">RANDOM</a>
+			<div class='buttonHold col-xs-12'>
+				<a href="#" class="btn btn-default specbtn wow fadeInUp" id="createBtn">CREATE A ROOM</a>
 			</div>
 
-			<div class='hold col-xs-6'>
-			<a href="/vote" class="roll smoothScroll btn btn-default vote">VOTE</a>
-		</div>-->
+			<div class='hider hidden wow fadeInDown'>
+				<div class='row firstRow'>
+					<div class="form-group col-xs-6 idDiv">
+						<label for="crtID">Room ID:</label>
+						<input type="text" class="form-control" id="crtID">
+					</div>
+					<div class="form-group col-xs-6 idDiv">
+						<label for="radio">Choose Mode:</label>
+						<div id="radio">
+							<label class="radio-inline">
+								<input type="radio" name="optradio">Random</label>
+							<label class="radio-inline">
+								<input type="radio" name="optradio">Vote</label>
+						</div>
+					</div>
+				</div>
 
-			<div class='hold col-xs-6'>
-				<a href="#" class="roll smoothScroll btn btn-default createroom">CREATE ROOM</a>
-			</div>
+				<div class='row secondRow'>
+					<div class='col-xs-12'>
+						<label for="invite">Invite Friends:</label>
+						<div class="input-group input-group-lg" id="invite">
+						  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+							<span class="input-group-addon" id="sizing-addon1"> <span class="glyphicon glyphicon-search"></span></span>
+						</div>
+					</div>
+				</div>
 
-			<div class='hold col-xs-6'>
-				<a href="#" class="roll smoothScroll btn btn-default joinroom">JOIN ROOM</a>
+				<div class='row thirdRow'>
+					<div class='col-xs-12'>
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle dTog" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Saved Groups
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						    <li><a href="#">Best Friends</a></li>
+						    <li role="separator" class="divider"></li>
+						    <li><a href="#">TAs</a></li>
+						    <li role="separator" class="divider"></li>
+						    <li><a href="#">Professors</a></li>
+						    <li role="separator" class="divider"></li>
+						    <li><a href="#">Losers</a></li>
+						  </ul>
+						</div>
+					</div>
+				</div>
+
+				<label class='down' for="added">Inviting:</label>
+				<div class='row fourthRow' id='added'>
+					<ul class="checks">
+							{{#each friends}}
+							<li><label class="fbfriends checkbox-inline"><input type="checkbox" value="">{{name}}</label></li>
+							{{/each}}
+					</ul>
+				</div>
+
+				<div class='row thirdRow'>
+					<a href="#" class="btn btn-default specbtn" id="finCreate">CREATE</a>
+				</div>
 			</div>
 		</div>
 	</section>
 
-  <!-- JAVASCRIPT JS FILES -->
-  <script src="./js/jquery.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./js/jquery.parallax.js"></script>
-  <script src="./js/smoothscroll.js"></script>
-  <script src="./js/nivo-lightbox.min.js"></script>
-  <script src="./js/wow.min.js"></script>
-  <script src="./js/home-script.js"></script>
+	<section id='join'>
+		<div class='container'>
+			<div class='buttonHold col-xs-12'>
+				<a href="#" class="btn btn-default specbtn wow fadeInUp" id="joinBtn">JOIN A ROOM</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- JAVASCRIPT JS FILES -->
+	<script src="./js/jquery.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.parallax.js"></script>
+	<script src="./js/smoothscroll.js"></script>
+	<script src="./js/nivo-lightbox.min.js"></script>
+	<script src="./js/wow.min.js"></script>
+	<script src="./js/home-script.js"></script>
 	<script src="./js/facebook.js"></script>
 
 </body>
+
 </html>

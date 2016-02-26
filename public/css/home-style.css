@@ -262,6 +262,7 @@ hr {
 .checks {
 	margin: 0;
   text-align: left;
+  margin-left: -20px;
 }
 .checks li {
   display: inline-block;
@@ -290,4 +291,8 @@ hr {
 
 #radio{
 	margin-top: 0;
+}
+
+input[type=checkbox] {
+display:none;
 }

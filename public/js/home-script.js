@@ -20,7 +20,7 @@ $(function(){
   });
   wow.init();
 
-  $('.chex').click(function(){
+  $(document).on('click','.chex',function(){
     $(this).parents('li').remove();
   });
 
@@ -128,12 +128,31 @@ $(function(){
 
 
     $('#finCreate').click(function(){
-        $(this).css({
-            background: '#FFFFFF',
-            color: '#202020'
-        });
-        var href = '/random'
-        setTimeout(function() {window.location = href}, 600);
+
+        var one =  $('input[name=rand]:checked', '#radioForm').val();
+
+        if(one == 'rand')
+        {
+          $(this).css({
+              background: '#FFFFFF',
+              color: '#202020'
+          });
+          var href = '/random'
+          setTimeout(function() {window.location = href}, 600);
+        }
+        else if (one == 'vote') {
+          $(this).css({
+              background: '#FFFFFF',
+              color: '#202020'
+          });
+          var href = '/vote'
+          setTimeout(function() {window.location = href}, 600);
+        }
+        else{
+          alert('please select random or vote')
+        }
+
+
     });
 
     $('#finJoin').click(function(){
@@ -165,4 +184,10 @@ $(function(){
       open = 1;
     }
   });
+
+
+
+
+
+
 });

@@ -58,10 +58,12 @@ http://www.tooplate.com/view/2076-zentro
 					<div class="form-group col-xs-6 idDiv">
 						<label for="radio">Choose Mode:</label>
 						<div id="radio">
+							<form id="radioForm">
 							<label class="radio-inline">
-								<input type="radio" name="optradio">Random</label>
-							<label class="radio-inline">
-								<input type="radio" name="optradio">Vote</label>
+									<input type="radio" name="rand" value="rand">Random</label>
+								<label class="radio-inline">
+									<input type="radio" name="rand" value="vote">Vote</label>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -100,7 +102,11 @@ http://www.tooplate.com/view/2076-zentro
 				<div class='row fourthRow' id='added'>
 					<ul class="checks">
 							{{#each friends}}
-							<li><label class="fbfriends checkbox-inline chex"><input type="checkbox" value="">{{name}}</label></li>
+							<li>
+								<label class="fbfriends checkbox-inline chex"><input type="checkbox" value=""><label>X</label>
+									{{name}}
+								</label>
+							</li>
 							{{/each}}
 					</ul>
 				</div>

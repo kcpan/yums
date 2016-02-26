@@ -8,7 +8,7 @@ function searchYelp(){
   var winners = [];
   for(var i = 0; i < pairs.length; i++) {
     if(pairs[i].check == true){
-      winners.append(pairs[i].restaurant);
+      winners.push(pairs[i].restaurant);
     }
   }
 

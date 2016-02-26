@@ -5,6 +5,10 @@ body {
   overflow-y: hidden;
 }
 
+.navbar{
+  z-index: 9999;
+}
+
 .top-buf {
 	margin-top: 50px;
 }

@@ -59,8 +59,9 @@ $(document).ready(function() {
         $('.field-line').each(function (){
           var place = $(".res-field", this).val();
           var checked = $(".our-check", this).is(":checked");
-          if(place && checked){
-            votes.push(place);
+          if(place){
+            votes.push({restaurant:place, check:checked});
+            localStorage.clear();
           }
         });
 

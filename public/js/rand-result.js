@@ -19,59 +19,76 @@ function addData(result){
     chosen = filter(result);
   }
 
+  var chosenJson = [];
+  for(var i = 0; i < 3; i++) {
+    chosen = filter(result);
+
+    while($.inArray(chosen, chosenJson) != -1) {
+      chosen = filter(result);
+    }
+    chosenJson.push(chosen);
+
+    var name = chosen.name;
+    var phone = chosen.display_phone;
+    var imgurl = chosen.image_url;
+    var rating = chosen.rating_img_url_large;
+    var count = chosen.review_count;
+    var url = chosen.mobile_url;
+
+    var street = chosen.location.address;
+    var city = chosen.location.city;
+    var state = chosen.location.state_code;
+    var zip = chosen.location.postal_code;
+    var address = street + "<br>" + city + " ," + state + " " + zip;
+    var addedHTML = '<div class="data">' +
+                    '<div class="name">' + name + '</div>' +
+                    '<div class="phone">' + phone + '</div>' +
+                    '<img class="image" src="' + imgurl + '">' +
+                    '<img class="rating" src="' + rating + '">' +
+                    '<div class="count">' + count + '</div>' +
+                    '<div class="address">' + address + '</div>' +
+                    '<a href="' + url + '" target="_blank" class="smoothScroll btn btn-default yelp">Yelp Page</a>' +
+                    '</div>';
+    $('#winnerHolder').append(addedHTML);
+  }
   localStorage.setItem("random-result",JSON.stringify(chosen));
-  console.log(chosen);
-
-  var name = chosen.name;
-  var phone = chosen.display_phone;
-  var imgurl = chosen.image_url;
-  var rating = chosen.rating_img_url_large;
-  var count = chosen.review_count;
-  var url = chosen.mobile_url;
-
-  var street = chosen.location.address;
-  var city = chosen.location.city;
-  var state = chosen.location.state_code;
-  var zip = chosen.location.postal_code;
-  var address = street + "<br>" + city + " ," + state + " " + zip;
-
-  var addedHTML = '<div class="name">' + name + '</div>' +
-                  '<div class="phone">' + phone + '</div>' +
-                  '<img class="image" src="' + imgurl + '">' +
-                  '<img class="rating" src="' + rating + '">' +
-                  '<div class="count">' + count + '</div>' +
-                  '<div class="address">' + address + '</div>';
-  $('.data').append(addedHTML);
-  $('.yelp').attr("href", url);
 }
 
 function reRoll(result){
-  var chosen = filter(result);
+  $('#winnerHolder').replaceWith('<div id="winnerHolder" class="row"></div>');
+  var chosenJson = [];
+  for(var i = 0; i < 3; i++) {
+    chosen = filter(result);
+
+    while($.inArray(chosen, chosenJson) != -1) {
+      chosen = filter(result);
+    }
+    chosenJson.push(chosen);
+
+    var name = chosen.name;
+    var phone = chosen.display_phone;
+    var imgurl = chosen.image_url;
+    var rating = chosen.rating_img_url_large;
+    var count = chosen.review_count;
+    var url = chosen.mobile_url;
+
+    var street = chosen.location.address;
+    var city = chosen.location.city;
+    var state = chosen.location.state_code;
+    var zip = chosen.location.postal_code;
+    var address = street + "<br>" + city + " ," + state + " " + zip;
+    var addedHTML = '<div class="data">' +
+                    '<div class="name">' + name + '</div>' +
+                    '<div class="phone">' + phone + '</div>' +
+                    '<img class="image" src="' + imgurl + '">' +
+                    '<img class="rating" src="' + rating + '">' +
+                    '<div class="count">' + count + '</div>' +
+                    '<div class="address">' + address + '</div>' +
+                    '<a href="' + url + '" target="_blank" class="smoothScroll btn btn-default yelp">Yelp Page</a>' +
+                    '</div>';
+    $('#winnerHolder').append(addedHTML);
+  }
   localStorage.setItem("random-result",JSON.stringify(chosen));
-
-  var name = chosen.name;
-  var phone = chosen.display_phone;
-  var imgurl = chosen.image_url;
-  var rating = chosen.rating_img_url_large;
-  var count = chosen.review_count;
-  var url = chosen.mobile_url;
-
-  var street = chosen.location.address;
-  var city = chosen.location.city;
-  var state = chosen.location.state_code;
-  var zip = chosen.location.postal_code;
-  var address = street + "<br>" + city + " ," + state + " " + zip;
-
-  var addedHTML = '<div class="data">' +
-                  '<div class="name">' + name + '</div>' +
-                  '<div class="phone">' + phone + '</div>' +
-                  '<img class="image" src="' + imgurl + '">' +
-                  '<img class="rating" src="' + rating + '">' +
-                  '<div class="count">' + count + '</div>' +
-                  '<div class="address">' + address + '</div>' +
-                  '</div>';
-  $('.data').replaceWith(addedHTML);
-  $('.yelp').attr("href", url);
 }
 
 function filter(result){

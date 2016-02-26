@@ -47,19 +47,19 @@ http://www.tooplate.com/view/2076-zentro
 	</section>
 
   <!-- form section -->
-  	<form action="/vote-result">
+  <form action="/vote-result">
 	<section id="form" class="parallax-section form-sec">
     <div class="container form-cont">
 			<div class="row form-hold">
 				<div class="input-fields-wrap">
 					{{#each restaurants}}
-					<div class="field-line">
+					<div class="field-line wow fadeInUp">
 						<span class="text-buf"><input class="res-field" type="text" name="mytext[]" value={{name}}></span>
 						<!--<a href="#" class="add-field-button">Add More Fields</a>-->
 						<span class="check-buf"><input class="our-check" type="checkbox" name="vote-{{name}}" value="1"></span>
 					</div>
 					{{/each}}
-				  <div class="field-line">
+				  <div class="field-line wow fadeInUp">
 						<span class="text-buf"><input class="res-field" type="text" name="mytext[]"></span>
 						<!--<a href="#" class="add-field-button">Add More Fields</a>-->
 						<span class="btn-buf"><button class="add-field-button">+</button></span>
@@ -68,8 +68,9 @@ http://www.tooplate.com/view/2076-zentro
       </div>
     </div>
   </section>
+	</form>
 
-	<section class="parallax-section btn-hold">
+	<section class="btn-hold">
 		<div class="container">
 			<div class="row">
 				<a href="/vote-result" class="roll smoothScroll btn btn-default">VOTE</a>
@@ -77,8 +78,6 @@ http://www.tooplate.com/view/2076-zentro
 			</div>
 		</div>
 	</section>
-	</form>
-
   <!-- JAVASCRIPT JS FILES -->
   <script src="./js/jquery.js"></script>
   <script src="./js/bootstrap.min.js"></script>

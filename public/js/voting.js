@@ -41,7 +41,7 @@ $(document).ready(function() {
             x++; //text box increment
             $(".add-field-button").parent('span').replaceWith('<span class="check-buf"><input class="our-check" type="checkbox" value=""></span>')
             //$(".add-field-button").replaceWith('<input class="our-check" type="checkbox" value="">');
-            $(wrapper).append('<div class="field-line"><span class="text-buf"><input class="res-field" type="text" name="mytext[]"/></span>' +
+            $(wrapper).append('<div class="field-line wow fadeInUp"><span class="text-buf"><input class="res-field" type="text" name="mytext[]"/></span>' +
                               '<span class="btn-buf"><button class="add-field-button">+</button></span></div>'); //add input box
         }
     }

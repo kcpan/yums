@@ -1,6 +1,8 @@
 html,
 body {
   height: 100%;
+  z-index: -1;
+  overflow-y: hidden;
 }
 
 .top-buf {
@@ -17,6 +19,12 @@ body {
 	border-bottom: 1px solid;
 }
 
+#form{
+  position: absolute;
+  z-index: 2000;
+  background-color: #f0eef1;
+}
+
 .form-sec {
 	height: 70%;
 	overflow-x: hidden;
@@ -29,7 +37,7 @@ body {
 
 .form-hold {
 	height: 100%;
-	background-color: #f0eef1;
+
 }
 
 .input-fields-wrap {
@@ -96,13 +104,20 @@ body {
 }
 
 .btn-hold {
-	height: 30%;
+  width: 100vw;
+  height: 100%;
 	position: relative;
+  z-index: 1001;
 }
+
+.btn-hold .container {
+  height: 100%;
+}
+
 
 .roll {
 	position: absolute;
-  top: 50%; left: 50%;
+  top:  80%; left: 50%;
   transform: translate(-50%,-50%);
 }
 /* TEMPLATE */

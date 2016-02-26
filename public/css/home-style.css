@@ -189,7 +189,7 @@ hr {
   color: #ffffff;
   font-weight: bold;
   letter-spacing: 2px;
-  padding: 16px 42px;
+  padding: 16px 0px;
   transition: all 0.4s ease-in-out;
 }
 #join .specbtn {
@@ -199,7 +199,8 @@ hr {
   color: #ffffff;
   font-weight: bold;
   letter-spacing: 2px;
-  padding: 16px 42px;
+  padding: 16px 0px;
+	transition: all 0.4s ease-in-out;
 }
 .buttonHold {
   padding: 0 position: absolute;
@@ -213,14 +214,14 @@ hr {
   margin-top: 15vh;
 }
 .secondRow {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .thirdRow {
   margin-top: 20px;
 }
 .fourthRow {
-  margin-top: 5px;
-  overflow-y: auto;
+  margin-top: 0;
+  overflow-y: scroll;
   height: 15vh;
 }
 #custom-search-input {
@@ -253,17 +254,40 @@ hr {
 }
 .down {
   z-index: 100;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .dTog {
   width: 100%;
 }
 .checks {
+	margin: 0;
   text-align: left;
 }
 .checks li {
   display: inline-block;
   float: left;
   width: 50%;
-  margin-top: 5px;
+  margin-top: 0px;
+}
+
+#createBtn{
+	width: 60vw;
+	text-align: center;
+}
+
+#joinBtn{
+	width: 60vw;
+	text-align: center;
+}
+
+#finCreate{
+	width: 40vw;
+}
+
+#finJoin{
+	width: 40vw;
+}
+
+#radio{
+	margin-top: 0;
 }

@@ -27,15 +27,20 @@ function addData(result){
   var imgurl = chosen.image_url;
   var rating = chosen.rating_img_url_large;
   var count = chosen.review_count;
-  var summary = chosen.snippet_text;
   var url = chosen.mobile_url;
+
+  var street = chosen.location.address;
+  var city = chosen.location.city;
+  var state = chosen.location.state_code;
+  var zip = chosen.location.postal_code;
+  var address = street + "<br>" + city + " ," + state + " " + zip;
 
   var addedHTML = '<div class="name">' + name + '</div>' +
                   '<div class="phone">' + phone + '</div>' +
                   '<img class="image" src="' + imgurl + '">' +
                   '<img class="rating" src="' + rating + '">' +
                   '<div class="count">' + count + '</div>' +
-                  '<div class="summary">' + summary + '</div>';
+                  '<div class="address">' + address + '</div>';
   $('.data').append(addedHTML);
   $('.yelp').attr("href", url);
 }
@@ -49,8 +54,13 @@ function reRoll(result){
   var imgurl = chosen.image_url;
   var rating = chosen.rating_img_url_large;
   var count = chosen.review_count;
-  var summary = chosen.snippet_text;
   var url = chosen.mobile_url;
+
+  var street = chosen.location.address;
+  var city = chosen.location.city;
+  var state = chosen.location.state_code;
+  var zip = chosen.location.postal_code;
+  var address = street + "<br>" + city + " ," + state + " " + zip;
 
   var addedHTML = '<div class="data">' +
                   '<div class="name">' + name + '</div>' +
@@ -58,7 +68,7 @@ function reRoll(result){
                   '<img class="image" src="' + imgurl + '">' +
                   '<img class="rating" src="' + rating + '">' +
                   '<div class="count">' + count + '</div>' +
-                  '<div class="summary">' + summary + '</div>'
+                  '<div class="address">' + address + '</div>' +
                   '</div>';
   $('.data').replaceWith(addedHTML);
   $('.yelp').attr("href", url);

@@ -7,6 +7,12 @@ $(window).load(function(){
 -------------------------------------------*/
 $(function(){
 
+  // FB.getLoginStatus(function(response){
+  //   if (response.status === 'connected') {
+  //     console.log('Logged in.');
+  //   }
+  // });
+
   // ------- WOW ANIMATED ------ //
   wow = new WOW(
   {

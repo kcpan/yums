@@ -31,6 +31,28 @@ function initializePage(){
     });
   });
 
+  $('.fbname').bind("facebook:init", function(){
+    FB.getLoginStatus(function(response) {
+      if (response.status == 'connected') {
+        FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
+          console.log('Successful login for: ' + JSON.stringify(response));
+          if (response && !response.error) {
+            userid = response.id;
+            $(".fbname").text("Hello, " + response.name);
+            $(".fbimage").attr("src", response.picture.data.url);
+
+            console.log(response.friends.data);
+            var friendslist = response.friends.data;
+            for(var i = 0; i < friendslist.length; i++) {
+              var toadd = '<li><label class="fbfriends checkbox-inline"><input type="checkbox" value="">' + friendslist[i].name + '</label></li>';
+              $(".checks").append(toadd);
+            }
+          }
+        });
+      }
+    });
+  });
+
   window.onload = function(){
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
@@ -50,11 +72,7 @@ function initializePage(){
           }
         });
       }
-      else{
-        console.log("failed to log in");
-      }
     });
-
   }
 }
 

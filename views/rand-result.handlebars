@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{{> threeExperiment}}
 	<meta charset="utf-8">
 	<title>YUMS</title>
 
@@ -47,6 +48,7 @@ http://www.tooplate.com/view/2076-zentro
 		</div>
 	</section>
 
+	{{#if three}}
 	<section class="parallax-section">
 		<div class="container">
 			<div id="winnerHolder" class="row">
@@ -63,6 +65,28 @@ http://www.tooplate.com/view/2076-zentro
 			</div>
 		</div>
 	</section>
+	{{else}}
+	<section class="parallax-section">
+		<div class="container">
+			<div class="row">
+				<div class="data sk-spinner sk-spinner-pulse">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class='buts'>
+		<div class="row">
+			<div class='hold col-xs-6'>
+			<a href="#" class="smoothScroll btn btn-default reroll">Re-Roll</a>
+			</div>
+
+			<div class='hold col-xs-6'>
+			<a href="#" target="_blank" class="smoothScroll btn btn-default yelp">Yelp Page</a>
+			</div>
+		</div>
+	</section>
+	{{/if}}
 
   <!-- JAVASCRIPT JS FILES -->
   <script src="./js/jquery.js"></script>
@@ -73,6 +97,7 @@ http://www.tooplate.com/view/2076-zentro
   <script src="./js/wow.min.js"></script>
   <script src="./js/custom.js"></script>
   <script src="./js/rand-result.js"></script>
+	{{> googleAnalytics}}
 
 </body>
 </html>

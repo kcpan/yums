@@ -49,6 +49,7 @@ app.get('/', index.view);
 app.get('/home', home.view);
 app.get('/random', random.view);
 app.get('/rand-result', randresult.view);
+app.get('/rand-result3', randresult.viewThree);
 app.get('/yelpsearch/:id', yelpsearch.search);
 app.get('/vote', vote.view);
 app.get('/vote-result', voteresult.view);

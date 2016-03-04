@@ -13,9 +13,11 @@ function initializePage(){
         console.log('Logged in.');
       }
       else {
+        /*
         FB.login(function(response) {
           statusChangeCallback(response);
-        }, {scope: 'public_profile,user_friends,email'});
+        }, {scope: 'public_profile,user_friends,email'});*/
+        logMeIn();
       }
     });
   });
@@ -93,17 +95,32 @@ function statusChangeCallback(response) {
     //document.getElementById('status').innerHTML = 'Please log ' +
     //  'into this app.';
 
+    /*
     FB.login(function(response) {
       statusChangeCallback(response);
-    }, {scope: 'public_profile,user_friends,email'});
+    }, {scope: 'public_profile,user_friends,email'});*/
+    logMeIn();
   } else {
     // The person is not logged into Facebook, so we're not sure if
     // they are logged into this app or not.
     //document.getElementById('status').innerHTML = 'Please log ' +
     //  'into Facebook.';
     console.log("pls");
+    /*
     FB.login(function(response) {
       statusChangeCallback(response);
-    }, {scope: 'public_profile,user_friends,email'});
+    }, {scope: 'public_profile,user_friends,email'});*/
+    logMeIn();
   }
+}
+
+function logMeIn()
+{
+  var paramsLocation=window.location.toString().indexOf('?');
+  var params="";
+  if (paramsLocation>=0)
+    params=window.location.toString().slice(paramsLocation);
+
+  top.location = 'https://graph.facebook.com/oauth/authorize?'+
+    'client_id=776597119112980&scope=public_profile,user_friends,email&redirect_uri=http://yumsapp.herokuapp.com/home'+params;
 }

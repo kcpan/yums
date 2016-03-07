@@ -157,5 +157,5 @@ body {
   float: left;
   width: 33%;
   margin-top: 0px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }

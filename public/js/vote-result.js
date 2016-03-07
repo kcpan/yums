@@ -35,6 +35,8 @@ function addData(result){
     var name = chosen.name;
     var phone = chosen.display_phone;
     var imgurl = chosen.image_url;
+    imgurl = imgurl.replace('ms.jpg','348s.jpg');
+
     var rating = chosen.rating_img_url_large;
     var count = chosen.review_count;
     var url = chosen.mobile_url;
@@ -45,13 +47,20 @@ function addData(result){
     var zip = chosen.location.postal_code;
     var address = street + "<br>" + city + " ," + state + " " + zip;
     var addedHTML = '<div class="data">' +
-                    '<div class="name">' + name + '</div>' +
-                    '<div class="phone">' + phone + '</div>' +
-                    '<img class="image" src="' + imgurl + '">' +
-                    '<img class="rating" src="' + rating + '">' +
-                    '<div class="count">' + count + '</div>' +
-                    '<div class="address">' + address + '</div>' +
-                    '<a href="' + url + '" target="_blank" class="smoothScroll btn btn-default yelp">Yelp Page</a>' +
+                    '<div class ="row">'+
+                      '<div class="name col-xs-12 ">'+ name +'</div>'+
+                    '</div>' +
+                    '<div class ="row">'+
+                      '<div class="phone col-xs-6">' + phone +
+                      '<img class="rating" src="' + rating + '">' +
+                      '</div>' +
+                      '<div class="address col-xs-6">' + address +
+                      '<a href="' + url + '" target="_blank" class="btn btn-default yelp">Yelp Page</a>' +
+                      '</div>' +
+                    '</div>' +
+                    '<div class ="row">'+
+                    '<img class="image col-xs-12" src="' + imgurl + '">' +
+                    '<div class ="row">'+
                     '</div>';
     $('#winnerHolder').append(addedHTML);
     //$('.yelp').attr("href", url);

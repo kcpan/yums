@@ -145,3 +145,17 @@ body {
 .signin-form ul li span.key{
     background: url(../images/2.png)#714c75 no-repeat center center;
 }
+
+.checks {
+	margin: 0;
+  text-align: left;
+  margin-left: -30px;
+  font-size: 1em;
+}
+.checks li {
+  display: inline-block;
+  float: left;
+  width: 33%;
+  margin-top: 0px;
+  overflow-x: scroll;
+}

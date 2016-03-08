@@ -1,0 +1,19 @@
+[
+  {
+    "room_name": "test1",
+    "type": true,
+    "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
+                {"name": "Kevin Pan", "fb_id": 10153451649326608}],
+    "restrictions": [{"category": "burgers"}],
+    "votes": []
+  },
+  {
+    "room_name": "test2",
+    "type": true,
+    "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
+                {"name": "Anna Chen", "fb_id": 10153712040769667},
+                {"name": "Kerin Wu", "fb_id": 10153238710752000}],
+    "restrictions": [{"category": "bulgarian"}],
+    "votes": []
+  }
+]

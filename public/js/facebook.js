@@ -3,6 +3,7 @@ $(document).ready(function() {
 });
 
 var userid;
+var username;
 
 function initializePage(){
   $(".loginBtn").click(function(){

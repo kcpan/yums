@@ -38,8 +38,8 @@ $(document).ready(function() {
         event.preventDefault();
 
         var restrictions = [];
-        $('#resList').each(function (){
-          console.log($(this.label).val());
+        $('li .box').each(function (){
+          console.log($(this).text());
           if($(this).is(":checked")) {
             restrictions.push($(this).val());
           }

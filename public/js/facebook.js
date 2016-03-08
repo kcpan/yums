@@ -46,7 +46,7 @@ function initializePage(){
             console.log(response.friends.data);
             var friendslist = response.friends.data;
             for(var i = 0; i < friendslist.length; i++) {
-              var toadd = ' <li><label class="fbfriends checkbox-inline chex"><input type="checkbox" value=""><label>X</label>' + friendslist[i].name + '</label></li>';
+              var toadd = ' <li><label class="fbfriends checkbox-inline"><input type="checkbox" value=""><label class="chex">X</label>' + friendslist[i].name + '</label></li>';
               $(".checks").append(toadd);
             }
           }

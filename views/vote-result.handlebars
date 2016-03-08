@@ -27,12 +27,6 @@ http://www.tooplate.com/view/2076-zentro
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-  <!-- preloader section -->
-  <section class="preloader">
-    <div class="sk-spinner sk-spinner-pulse"></div>
-  </section>
-
   <!-- navigation section -->
   {{> navbar}}
 
@@ -41,11 +35,13 @@ http://www.tooplate.com/view/2076-zentro
 		<div class="container">
 			<div class="row">
 				<div class="title">
-					RESULTS
+					LOADING RESULTS...
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<div id='loading' class="sk-spinner sk-spinner-pulse"></div>
 
 	<section class="parallax-section">
 		<div class="container">

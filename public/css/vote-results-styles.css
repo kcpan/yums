@@ -2,6 +2,19 @@ body {
   overflow:auto;
 }
 
+#loading{
+  position: relative;
+  width: 50vw;
+  height: 50vw;;
+  z-index: 100;
+  margin: 0 auto;
+  margin-top: 25vw;
+}
+
+#winnerHolder{
+  align-items: center;
+}
+
 .data {
   margin: 5%;
 }

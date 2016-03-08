@@ -137,20 +137,20 @@ $(function(){
               background: '#FFFFFF',
               color: '#202020'
           });
-          var href = '/random'
-          setTimeout(function() {window.location = href}, 600);
+          //var href = '/random'
+          //setTimeout(function() {window.location = href}, 600);
         }
         else if (one == 'vote') {
           $(this).css({
               background: '#FFFFFF',
               color: '#202020'
           });
-          var href = '/vote'
-          setTimeout(function() {window.location = href}, 600);
+          //var href = '/vote'
+          //setTimeout(function() {window.location = href}, 600);
         }
-        else{
-          alert('please select random or vote')
-        }
+        //else{
+        //  alert('please select random or vote')
+        //}
 
 
     });
@@ -160,14 +160,15 @@ $(function(){
             background: '#FFFFFF',
             color: '#202020'
         });
+        /*
         var coin = Math.random();
         var href = ''
         if (coin > 0.5) {
           var href = '/random'
         } else {
           var href = '/vote'
-        }
-        setTimeout(function() {window.location = href}, 600);
+        }*/
+        //setTimeout(function() {window.location = href}, 600);
     });
   // HIDE MOBILE MENU AFTER CLIKING ON A LINK
   $('.navbar-collapse a').click(function(){
@@ -184,10 +185,5 @@ $(function(){
       open = 1;
     }
   });
-
-
-
-
-
 
 });

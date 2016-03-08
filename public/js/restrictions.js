@@ -39,7 +39,7 @@ $(document).ready(function() {
 
         var restrictions = [];
         $('#resList').each(function (){
-          console.log($(this).val());
+          console.log($(this.label).val());
           if($(this).is(":checked")) {
             restrictions.push($(this).val());
           }

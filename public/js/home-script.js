@@ -186,4 +186,28 @@ $(function(){
     }
   });
 
+  $('#invite .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 0,
+    classNames: {menu: "dropdown-menu",
+                 suggestion: "kids",
+                 dataset: "names"}
+  },
+  {
+    name: 'friends',
+    source: substringMatcher(friendslist)
+  }).on('typeahead:selected', inviteList);
+
+  function inviteList($e, datum){
+      var toadd = ' <li><label class="fbfriends checkbox-inline"><input type="checkbox" value=""><label class="chex">X</label>' + datum + '</label></li>';
+      $(".checks").append(toadd);
+      $('#invite .typeahead').typeahead('val','');
+  }
+
+  // $('.names').on("click",function(){
+  //   alert('WTF');
+
+  // });
+
 });

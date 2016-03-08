@@ -295,4 +295,10 @@ hr {
 
 input[type=checkbox] {
 display:none;
+
+
+}
+
+.full{
+  width: 80vw;
 }

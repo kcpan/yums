@@ -1,9 +1,12 @@
+var userid;
+var username;
+var friendslist=[];
+
 $(document).ready(function() {
   initializePage();
 });
 
-var userid;
-var username;
+
 
 function initializePage(){
   $(".loginBtn").click(function(){
@@ -45,10 +48,9 @@ function initializePage(){
             $(".fbimage").attr("src", response.picture.data.url);
 
             console.log(response.friends.data);
-            var friendslist = response.friends.data;
-            for(var i = 0; i < friendslist.length; i++) {
-              var toadd = ' <li><label class="fbfriends checkbox-inline"><input type="checkbox" value=""><label class="chex">X</label>' + friendslist[i].name + '</label></li>';
-              $(".checks").append(toadd);
+            var temp = response.friends.data;
+            for(var i = 0; i < temp.length; i++) {           
+              friendslist.push(temp[i].name);
             }
           }
         });
@@ -56,27 +58,6 @@ function initializePage(){
     });
   });
 
-  // window.onload = function(){
-  //   FB.getLoginStatus(function(response) {
-  //     if (response.status == 'connected') {
-  //       FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
-  //         console.log('Successful login for: ' + JSON.stringify(response));
-  //         if (response && !response.error) {
-  //           userid = response.id;
-  //           $(".fbname").text("Hello, " + response.name);
-  //           $(".fbimage").attr("src", response.picture.data.url);
-  //
-  //           console.log(response.friends.data);
-  //           var friendslist = response.friends.data;
-  //           for(var i = 0; i < friendslist.length; i++) {
-  //             var toadd = '<li><label class="fbfriends checkbox-inline"><input type="checkbox" value="">' + friendslist[i].name + '</label></li>';
-  //             $(".checks").append(toadd);
-  //           }
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
 }
 
 function statusChangeCallback(response) {

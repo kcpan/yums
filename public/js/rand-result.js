@@ -98,6 +98,7 @@ function parseData(chosen){
   var name = chosen.name;
   var phone = chosen.display_phone;
   var imgurl = chosen.image_url;
+  imgurl = imgurl.replace('ms.jpg','348s.jpg');
   var rating = chosen.rating_img_url_large;
   var count = chosen.review_count;
   var url = chosen.mobile_url;
@@ -127,7 +128,7 @@ function parseData(chosen){
     //
     // $('.data').append(addedHTML);
     // $('.yelp').attr("href", url);
-  
+
 }
 
 function initializePage() {

@@ -12,14 +12,12 @@ exports.view = function(req, res){
 	  res.redirect('/rand-result3');
 	}*/
 
-	data["three"] = false;
 	console.log(data);
 	res.render('rand-result', data);
 	//res.render('index');
 };
 
 exports.viewThree = function(req, res){
-	data["three"] = true;
 	console.log(data);
 	res.render('rand-result', data);
-}
+};

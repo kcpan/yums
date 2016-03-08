@@ -107,30 +107,27 @@ function parseData(chosen){
   var state = chosen.location.state_code;
   var zip = chosen.location.postal_code;
   var address = street + "<br>" + city + " ," + state + " " + zip;
-
-  if ($('#winnerHolder').length){
-    var addedHTML = '<div class="data">' +
-                    '<div class="name">' + name + '</div>' +
-                    '<div class="phone">' + phone + '</div>' +
-                    '<img class="image" src="' + imgurl + '">' +
+  var addedHTML = '<div class="data">' +
+                  '<div class ="row">'+
+                    '<div class="name col-xs-12 ">'+ name +'</div>'+
+                  '</div>' +
+                  '<div class ="row">'+
+                    '<div class="phone col-xs-6">' + phone +
                     '<img class="rating" src="' + rating + '">' +
-                    '<div class="count">' + count + '</div>' +
-                    '<div class="address">' + address + '</div>' +
-                    '<a href="' + url + '" target="_blank" class="smoothScroll btn btn-default yelp">Yelp Page</a>' +
-                    '</div>';
-    $('#winnerHolder').append(addedHTML);
-  }
-  else{
-    var addedHTML = '<div class="name">' + name + '</div>' +
-                    '<div class="phone">' + phone + '</div>' +
-                    '<img class="image" src="' + imgurl + '">' +
-                    '<img class="rating" src="' + rating + '">' +
-                    '<div class="count">' + count + '</div>' +
-                    '<div class="address">' + address + '</div>';
-
-    $('.data').append(addedHTML);
-    $('.yelp').attr("href", url);
-  }
+                    '</div>' +
+                    '<div class="address col-xs-6">' + address +
+                    '<a href="' + url + '" target="_blank" class="btn btn-default yelp">Yelp Page</a>' +
+                    '</div>' +
+                  '</div>' +
+                  '<div class ="row">'+
+                  '<img class="image col-xs-12" src="' + imgurl + '">' +
+                  '<div class ="row">'+
+                  '</div>';
+  $('#winnerHolder').append(addedHTML);
+    //
+    // $('.data').append(addedHTML);
+    // $('.yelp').attr("href", url);
+  
 }
 
 function initializePage() {

@@ -12,20 +12,22 @@ function searchYelp(){
     }
   }
 
-  var winner
+  var winner;
   if(winners.length > 0)
     winner = winners[Math.floor(winners.length * Math.random())];
   else {
     winner = "food";
   }
+
   $.get("/yelpsearch/3?term=" + winner + "&city=San%20Diego", addData);
 }
 
 function addData(result){
-  $('.data').removeClass('sk-spinner sk-spinner-pulse');
+  $('.title').text('RESULTS');
+  $('#loading').remove();
 
   console.log(result);
-  var businesses = result['businesses'];
+  var businesses = result.businesses;
   var chosenJson = [];
 
   for(var i = 0; i < 3; i++) {

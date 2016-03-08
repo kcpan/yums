@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var count=6;
-  
+
 
     // for(var i = 0; i < friendslist.length; i++) {
     //     var toadd = ' <li><label class="fbfriends checkbox-inline chex"><input type="checkbox" value=""><label>X</label>' + friendslist[i].name + '</label></li>';
@@ -12,8 +12,9 @@ $(document).ready(function() {
         event.preventDefault();
 
         var restrictions = [];
-        $('.res-field').each(function (){
-          if($(this).val()) {
+        $('#resList').each(function (){
+          console.log($(this).val());
+          if($(this).is(":checked")) {
             restrictions.push($(this).val());
           }
         });

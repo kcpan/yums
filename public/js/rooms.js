@@ -60,7 +60,10 @@ var roomList = [];
                   $('.fbfriends').each(function () {
                     var friendslist = response.friends.data
                     for(var i = 0; i < friendslist.length; i++) {
-                      if($(this).val() == friendslist[i].name) {
+                      var temp = $(this).text();
+                      var friendName = temp.slice(1, temp.length);
+
+                      if(friendName == friendslist[i].name) {
                         memberList.push({"name": friendslist[i].name, "fb_id": friendslist[i].id})
                       }
                     }
@@ -81,7 +84,7 @@ var roomList = [];
                         'restrictions': [{"category": ""}]
                       }
   										localStorage.setItem("roomRestrictions", JSON.stringify(json));
-											setTimeout(function() {window.location = '/random'}, 600);
+											//setTimeout(function() {window.location = '/random'}, 600);
 										}
 										else {
                       var json = {
@@ -89,7 +92,7 @@ var roomList = [];
                         'votes': [{"place": "", "votes": 0}]
                       }
   										localStorage.setItem("roomVotes", JSON.stringify(json));
-											setTimeout(function() {window.location = '/vote'}, 600);
+											//setTimeout(function() {window.location = '/vote'}, 600);
 										}
 									});
 								}

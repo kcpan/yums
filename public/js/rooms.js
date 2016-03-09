@@ -218,7 +218,8 @@ var roomList = [];
   $('#joinDiv .typeahead').typeahead({
     hint: true,
     highlight: true,
-    minLength: 1,
+    minLength: 0,
+    limit: 10,
     classNames: {menu: "dropdown-menu"}
   },
   {

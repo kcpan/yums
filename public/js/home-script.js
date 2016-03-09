@@ -37,7 +37,7 @@ $(function(){
         });
 
         $('#create').css({
-            height: 'calc(95vh - 50px)'
+            height: 'calc(100vh - 80px)'
         });
         $('#join').css({
             height: '0'
@@ -45,7 +45,7 @@ $(function(){
         $('#joinBtn').hide();
 
         $('#create .buttonHold').animate({
-            top: '10%'
+            top: '50px'
         },400, function(){
             $('.hider').removeClass('hidden');
             $('#createBtn').text('BACK');
@@ -62,10 +62,10 @@ $(function(){
           color: 'white'
       });
       $('#create').css({
-          height: 'calc(47.5vh - 25px)'
+          height: 'calc(50vh - 40px)'
       });
       $('#join').css({
-          height: 'calc(47.5vh - 25px)'
+          height: 'calc(50vh - 40px)'
       });
       $('.hider').addClass('hidden');
       $('#joinBtn').show();
@@ -86,7 +86,7 @@ $(function(){
         });
 
         $('#join').css({
-            height: 'calc(95vh - 50px)'
+            height: 'calc(100vh - 80px)'
         });
         $('#create').css({
             height: '0'
@@ -94,7 +94,7 @@ $(function(){
         $('#createBtn').hide();
 
         $('#join .buttonHold').animate({
-            top: '10%'
+            top: '50px'
         },400, function(){
             $('#joinBtn').text('BACK');
             $('#joinBtn').css({width: '40vw'});
@@ -111,10 +111,10 @@ $(function(){
           color: 'white'
       });
       $('#join').css({
-          height: 'calc(47.5vh - 25px)'
+          height: 'calc(50vh - 40px)'
       });
       $('#create').css({
-          height: 'calc(47.5vh - 25px)'
+          height: 'calc(50vh - 40px)'
       });
       $('.hider2').addClass('hidden');
       $('#createBtn').show();

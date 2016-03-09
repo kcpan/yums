@@ -37,7 +37,7 @@ $(function(){
         });
 
         $('#create').css({
-            height: $( window ).height()-80+'px'
+            height: $( document ).height()-80+'px'
         });
         $('#join').css({
             height: '0'
@@ -62,10 +62,10 @@ $(function(){
           color: 'white'
       });
       $('#create').css({
-          height: $( window ).height()/2-40+'px'
+          height: $( document ).height()/2-40+'px'
       });
       $('#join').css({
-          height: $( window ).height()/2-40+'px'
+          height: $( document ).height()/2-40+'px'
       });
       $('.hider').addClass('hidden');
       $('#joinBtn').show();
@@ -86,7 +86,7 @@ $(function(){
         });
 
         $('#join').css({
-            height: $( window ).height()-80+'px'
+            height: $( document ).height()-80+'px'
         });
         $('#create').css({
             height: '0'
@@ -111,10 +111,10 @@ $(function(){
           color: 'white'
       });
       $('#join').css({
-          height: $( window ).height()/2-40+'px'
+          height: $( document ).height()/2-40+'px'
       });
       $('#create').css({
-          height: $( window ).height()/2-40+'px'
+          height: $( document ).height()/2-40+'px'
       });
       $('.hider2').addClass('hidden');
       $('#createBtn').show();
@@ -189,7 +189,7 @@ $(function(){
   $('#invite .typeahead').typeahead({
     hint: true,
     highlight: true,
-    minLength: 0,
+    minLength: 1,
     classNames: {menu: "dropdown-menu",
                  suggestion: "kids",
                  dataset: "names"}

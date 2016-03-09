@@ -171,6 +171,8 @@ hr {
   text-align: center;
   position: relative;
   transition: all 0.4s ease-in-out;
+  display: block;
+  top: 10%;
 }
 #join {
   height: calc(50vh - 40px);
@@ -203,7 +205,6 @@ hr {
 	transition: all 0.4s ease-in-out;
 }
 .buttonHold {
-  padding: 0 position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -211,7 +212,10 @@ hr {
   margin-top: 10px;
 }
 .firstRow {
-  margin-top: 15vh;
+  margin-top: 10px;
+}
+.firstRow2 {
+  margin-top: 100px;
 }
 .secondRow {
   margin-top: 0px;
@@ -222,7 +226,7 @@ hr {
 .fourthRow {
   margin-top: 0;
   overflow-y: scroll;
-  height: 15vh;
+  height: 80px;
 }
 #custom-search-input {
   padding: 3px;
@@ -295,10 +299,12 @@ hr {
 
 input[type=checkbox] {
 display:none;
-
-
 }
 
 .full{
   width: 80vw;
+}
+
+.hider{
+  margin-top: 100px;
 }

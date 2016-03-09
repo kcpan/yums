@@ -37,7 +37,7 @@ $(function(){
         });
 
         $('#create').css({
-            height: 'calc(100vh - 80px)'
+            height: $( window ).height()-80+'px'
         });
         $('#join').css({
             height: '0'
@@ -62,10 +62,10 @@ $(function(){
           color: 'white'
       });
       $('#create').css({
-          height: 'calc(50vh - 40px)'
+          height: $( window ).height()/2-40+'px'
       });
       $('#join').css({
-          height: 'calc(50vh - 40px)'
+          height: $( window ).height()/2-40+'px'
       });
       $('.hider').addClass('hidden');
       $('#joinBtn').show();
@@ -86,7 +86,7 @@ $(function(){
         });
 
         $('#join').css({
-            height: 'calc(100vh - 80px)'
+            height: $( window ).height()-80+'px'
         });
         $('#create').css({
             height: '0'
@@ -111,10 +111,10 @@ $(function(){
           color: 'white'
       });
       $('#join').css({
-          height: 'calc(50vh - 40px)'
+          height: $( window ).height()/2-40+'px'
       });
       $('#create').css({
-          height: 'calc(50vh - 40px)'
+          height: $( window ).height()/2-40+'px'
       });
       $('.hider2').addClass('hidden');
       $('#createBtn').show();

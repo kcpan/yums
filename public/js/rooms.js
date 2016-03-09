@@ -222,6 +222,7 @@ var roomList = [];
     hint: true,
     highlight: true,
     minLength: 0,
+    limit: 10,
     classNames: {menu: "dropdown-menu"}
   },
   {

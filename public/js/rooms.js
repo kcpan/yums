@@ -55,11 +55,21 @@ var roomList = [];
 								if (response && !response.error) {
 									userid = response.id;
 									username = response.name;
+                  var memberList = [{"name": username, "fb_id": userid}];
+
+                  $('.fbfriends').each(function () {
+                    var friendslist = response.friends.data
+                    for(var i = 0; i < friendslist.length; i++) {
+                      if($(this).val() == friendslist[i].name) {
+                        memberList.push({"name": friendslist[i].name, "fb_id": friendslist[i].id})
+                      }
+                    }
+                  });
 
 									var json = {
 										'room_name': roomName,
 										'type': type,
-										"members": [{"name": username, "fb_id": userid}],
+										"members": memberList,
 										'restrictions': [{"category": ""}],
 										'votes': [{"place": "", "votes": 0}]
 									}

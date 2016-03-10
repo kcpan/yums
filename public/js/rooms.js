@@ -84,7 +84,7 @@ var roomList = [];
                         'restrictions': [{"category": ""}]
                       }
   										localStorage.setItem("roomRestrictions", JSON.stringify(json));
-											//setTimeout(function() {window.location = '/random'}, 600);
+											setTimeout(function() {window.location = '/random'}, 600);
 										}
 										else {
                       var json = {
@@ -92,7 +92,7 @@ var roomList = [];
                         'votes': [{"place": "", "votes": 0}]
                       }
   										localStorage.setItem("roomVotes", JSON.stringify(json));
-											//setTimeout(function() {window.location = '/vote'}, 600);
+											setTimeout(function() {window.location = '/vote'}, 600);
 										}
 									});
 								}

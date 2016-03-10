@@ -12,8 +12,11 @@ $(document).ready(function() {
         event.preventDefault();
 
         var restrictions = [];
+        var counter = 0;
         $('#resList').each(function (){
-          console.log($(this).val());
+          counter++;
+
+          console.log(counter);
           if($(this).is(":checked")) {
             restrictions.push($(this).val());
           }

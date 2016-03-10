@@ -1,0 +1,109 @@
+{
+  "place":[
+    {
+      "title":"American (New)",
+      "alias":"newamerican"
+    },
+    {
+      "title":"American (Traditional)",
+      "alias":"tradamerican"
+    },
+    {
+      "title":"Asian Fusion",
+      "alias":"asianfusion"
+    },
+    {
+      "title":"Breakfast & Brunch",
+      "alias":"breakfast_brunch"
+    },
+    {
+      "title":"Buffets",
+      "alias":"buffets"
+    },
+    {
+      "title":"Burgers",
+      "alias":"burgers"
+    },
+    {
+      "title":"Cafes",
+      "alias":"cafes"
+    },
+    {
+      "title":"Chinese",
+      "alias":"chinese"
+    },
+    {
+      "title":"Delis",
+      "alias":"delis"
+    },
+    {
+      "title":"Diners",
+      "alias":"diners"
+    },
+    {
+      "title":"Fast Food",
+      "alias":"hotdogs"
+    },
+    {
+      "title":"Greek",
+      "alias":"greek"
+    },
+    {
+      "title":"Hawaiian",
+      "alias":"hawaiian"
+    },
+    {
+      "title":"Hot Pot",
+      "alias":"hotpot"
+    },
+    {
+      "title":"Indian",
+      "alias":"indpak"
+    },
+    {
+      "title":"Italian",
+      "alias":"italian"
+    },
+    {
+      "title":"Japanese",
+      "alias":"japanese"
+    },
+    {
+      "title":"Korean",
+      "alias":"korean"
+    },
+    {
+      "title":"Mexican",
+      "alias":"mexican"
+    },
+    {
+      "title":"Middle Eastern",
+      "alias":"mideastern"
+    },
+    {
+      "title":"Pizza",
+      "alias":"pizza"
+    },
+
+    {
+      "title":"Sandwiches",
+      "alias":"sandwiches"
+    },
+    {
+      "title":"Seafood",
+      "alias":"seafood"
+    },
+    {
+      "title":"Thai",
+      "alias":"thai"
+    },
+    {
+      "title":"Vegetarian",
+      "alias":"vegetarian"
+    },
+    {
+      "title":"Vietnamese",
+      "alias":"vietnamese"
+    }
+  ]
+}

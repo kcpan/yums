@@ -150,12 +150,23 @@ body {
 	margin: 0;
   text-align: left;
   margin-left: -30px;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 .checks li {
   display: inline-block;
   float: left;
-  width: 33%;
+  width: 50%;
   margin-top: 0px;
   overflow-x: auto;
+}
+
+.box{
+  width: 5.7em;
+  height: 1.5em;
+  display: table-cell;
+  border: none;
+  color: white;
+  margin: none;
+  text-align:center;
+  vertical-align:middle;
 }

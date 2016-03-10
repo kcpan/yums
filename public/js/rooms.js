@@ -88,7 +88,7 @@ var roomList = [];
 										}
 										else {
                       var json = {
-                        'room_name': name,
+                        'room_name': roomName,
                         'votes': [{"place": "", "votes": 0}]
                       }
   										localStorage.setItem("roomVotes", JSON.stringify(json));

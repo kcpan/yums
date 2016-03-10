@@ -1,6 +1,6 @@
 window.onload = markRoomVotes;
-var roomName = JSON.parse(localStorage.getItem("roomRestrictions")).room_name;
-var roomVotes = JSON.parse(localStorage.getItem("roomRestrictions")).votes;
+var roomName; //= JSON.parse(localStorage.getItem("roomRestrictions")).room_name;
+var roomVotes; //= JSON.parse(localStorage.getItem("roomRestrictions")).votes;
 var username = JSON.parse(localStorage.getItem("FBInfo")).username;
 var userid = JSON.parse(localStorage.getItem("FBInfo")).userid;
 

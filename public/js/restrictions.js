@@ -73,14 +73,13 @@ $(document).ready(function() {
         }
     });
 
-
-
     function checkInput() {
       var input = $(".add-field-button").parent().siblings().children().val();
       console.log("input" + input);
       return $.trim(input);
     }
 
+    setInterval(updateRoomRestrictions, 1000);
 });
 
 function addData(result) {
@@ -100,4 +99,22 @@ function markRoomRestrictions() {
       }
     }
   });
+}
+
+function updateRoomRestrictions() {
+  function updateInfo(room_json) {
+    console.log(room_json);
+    roomRestrictions = room_json.restrictions;
+
+    $("input[type='checkbox']").each(function () {
+      //console.log($(this).val());
+      for(var i = 0; i < roomRestrictions.length; i++) {
+        if($(this).val() == roomRestrictions[i].category) {
+          $(this).prop("checked", true);
+        }
+      }
+    });
+  }
+
+  $.get('/database/info/' + roomName, updateInfo);
 }

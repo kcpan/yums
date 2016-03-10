@@ -68,6 +68,7 @@ app.get('/settings', settings.view);
 app.get('/database/:id', database.getRooms);
 app.get('/database/join/:id', database.joinRoom);
 app.get('/database/check/:id', database.checkRoom);
+app.get('/database/info/:id', database.getRoomInfo);
 app.post('/database/create', database.createRoom);
 app.post('/database/updateRestrictions', database.updateRoomRestriction);
 app.post('/database/updateVoteOptions', database.updateRoomVoteOptions);

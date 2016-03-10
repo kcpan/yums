@@ -124,5 +124,18 @@ exports.updateRoomVoteOptions = function(req, res) {
 
 exports.updateRoomVoteCount = function(req, res) {
   var form_data = req.body;
-  
+
+}
+
+exports.getRoomInfo = function(req, res) {
+  var roomName = req.params.id;
+
+  models.Room
+    .find({"room_name":roomName})
+    .exec(afterQuery);
+
+    function afterQuery(err, rooms) {
+      if(err) console.log(err);
+      res.json(rooms[0]);
+    }
 }

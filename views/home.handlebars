@@ -26,6 +26,7 @@ http://www.tooplate.com/view/2076-zentro
 <body>
 	<!-- Facebook SDK -->
 	{{> facebook}}
+
 	<!-- preloader section -->
 	<section class="preloader">
 		<div class="sk-spinner sk-spinner-pulse"></div>
@@ -35,8 +36,7 @@ http://www.tooplate.com/view/2076-zentro
 	{{> navbar}}
 
 	<section id='profile'>
-		<div class='container'>
-			<div class='summary col-xs-12 wow fadeInUp'>
+		<div class='container summary'>
 				<h4 class='fbname'></h4>
 			</div>
 		</div>
@@ -71,9 +71,8 @@ http://www.tooplate.com/view/2076-zentro
 				<div class='row secondRow'>
 					<div class='col-xs-12'>
 						<label for="invite">Invite Friends:</label>
-						<div class="input-group input-group-lg" id="invite">
-						  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-							<span class="input-group-addon" id="sizing-addon1"> <span class="glyphicon glyphicon-search"></span></span>
+						<div class="" id="invite">
+						  <input type="text" class="full form-control typeahead" placeholder="Facebook Friend">
 						</div>
 					</div>
 				</div>
@@ -118,10 +117,12 @@ http://www.tooplate.com/view/2076-zentro
 			</div>
 
 			<div class='hider2 hidden wow fadeInDown'>
-				<div class='row firstRow'>
+				<div class='row firstRow2'>
 					<div class="form-group col-xs-offset-2 col-xs-8 idDiv">
 						<label for="crtID">Room ID:</label>
-						<input type="text" class="form-control" id="joinID">
+						<div id="joinDiv">
+							<input type="text" class="typeahead form-control" id="joinID" placeholder="Room ID">
+					  </div>
 					</div>
 				</div>
 				<div class='row thirdRow'>
@@ -140,7 +141,8 @@ http://www.tooplate.com/view/2076-zentro
 	<script src="./js/wow.min.js"></script>
 	<script src="./js/home-script.js"></script>
 	<script src="./js/facebook.js"></script>
-	<!-- <script src="./js/rooms.js"></script> -->
+	<script src="./js/typeahead.bundle.js"></script>
+	<script src="./js/rooms.js"></script>
 </body>
 
 </html>

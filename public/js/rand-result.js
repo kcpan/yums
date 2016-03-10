@@ -4,10 +4,6 @@ window.onload = searchYelp;
 
 $(document).ready(function() {
   initializePage();
-
-  $('.reroll').click(function(){
-    $.get("/yelpsearch/3?term=food&city=La%20Jolla", reRoll);
-  });
 });
 
 function searchYelp(){
@@ -39,11 +35,16 @@ function addData(result){
     parseData(chosen);
   }
   localStorage.setItem("random-result",JSON.stringify(chosen));
+
+    $('.reCont').append('<a href="#" class="btn btn-default reroll">Re-Roll</a>');
+
+    $('.reroll').on("click",function(){
+      $.get("/yelpsearch/3?term=food&city=La%20Jolla", reRoll);
+        });
 }
 
 function reRoll(result){
-  $('#winnerHolder').replaceWith('<div id="winnerHolder" class="row"></div>');
-  $('.data').replaceWith('<div class="data"></div>');
+  $('#winnerHolder').replaceWith('<div id="winnerHolder" class="col-xs-12"></div>');
 
   var chosenJson = [];
   for(var i = 0; i < loopAmount; i++) {
@@ -98,6 +99,7 @@ function parseData(chosen){
   var name = chosen.name;
   var phone = chosen.display_phone;
   var imgurl = chosen.image_url;
+  imgurl = imgurl.replace('ms.jpg','348s.jpg');
   var rating = chosen.rating_img_url_large;
   var count = chosen.review_count;
   var url = chosen.mobile_url;
@@ -127,11 +129,9 @@ function parseData(chosen){
     //
     // $('.data').append(addedHTML);
     // $('.yelp').attr("href", url);
-  
+
 }
 
 function initializePage() {
-  $('.reroll').click(function(e){
-    ga("send", "event", "reroll", "click");
-  });
+
 }

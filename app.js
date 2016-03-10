@@ -6,7 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+var mongoose = require('mongoose');
 
 require('es6-promise').polyfill();
 
@@ -19,8 +20,16 @@ var vote = require('./routes/vote');
 var voteresult = require('./routes/vote-result');
 var profile = require('./routes/profile');
 var settings = require('./routes/settings');
+var database = require('./routes/database');
 // Example route
 // var user = require('./routes/user');
+
+// Connect to the Mongo database, whether locally or on Heroku
+// MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
+var local_database_name = 'yums';
+var local_database_uri  = 'mongodb://localhost/' + local_database_name
+var database_uri = process.env.MONGOLAB_URI || local_database_uri
+mongoose.connect(database_uri);
 
 var app = express();
 
@@ -55,6 +64,13 @@ app.get('/vote', vote.view);
 app.get('/vote-result', voteresult.view);
 app.get('/profile', profile.view);
 app.get('/settings', settings.view);
+
+app.get('/database/:id', database.getRooms);
+app.get('/database/join/:id', database.joinRoom);
+app.get('/database/check/:id', database.checkRoom);
+app.post('/database/create', database.createRoom);
+app.post('/database/updateRestrictions', database.updateRoomRestriction);
+app.post('/database/updateVoteOptions', database.updateRoomVoteOptions);
 // Example route
 // app.get('/users', user.list);
 

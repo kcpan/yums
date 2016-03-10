@@ -37,7 +37,7 @@ $(function(){
         });
 
         $('#create').css({
-            height: 'calc(95vh - 50px)'
+            height: $( document ).height()-80+'px'
         });
         $('#join').css({
             height: '0'
@@ -45,7 +45,7 @@ $(function(){
         $('#joinBtn').hide();
 
         $('#create .buttonHold').animate({
-            top: '10%'
+            top: '50px'
         },400, function(){
             $('.hider').removeClass('hidden');
             $('#createBtn').text('BACK');
@@ -62,10 +62,10 @@ $(function(){
           color: 'white'
       });
       $('#create').css({
-          height: 'calc(47.5vh - 25px)'
+          height: $( document ).height()/2-40+'px'
       });
       $('#join').css({
-          height: 'calc(47.5vh - 25px)'
+          height: $( document ).height()/2-40+'px'
       });
       $('.hider').addClass('hidden');
       $('#joinBtn').show();
@@ -86,7 +86,7 @@ $(function(){
         });
 
         $('#join').css({
-            height: 'calc(95vh - 50px)'
+            height: $( document ).height()-80+'px'
         });
         $('#create').css({
             height: '0'
@@ -94,7 +94,7 @@ $(function(){
         $('#createBtn').hide();
 
         $('#join .buttonHold').animate({
-            top: '10%'
+            top: '50px'
         },400, function(){
             $('#joinBtn').text('BACK');
             $('#joinBtn').css({width: '40vw'});
@@ -111,10 +111,10 @@ $(function(){
           color: 'white'
       });
       $('#join').css({
-          height: 'calc(47.5vh - 25px)'
+          height: $( document ).height()/2-40+'px'
       });
       $('#create').css({
-          height: 'calc(47.5vh - 25px)'
+          height: $( document ).height()/2-40+'px'
       });
       $('.hider2').addClass('hidden');
       $('#createBtn').show();
@@ -137,20 +137,20 @@ $(function(){
               background: '#FFFFFF',
               color: '#202020'
           });
-          var href = '/random'
-          setTimeout(function() {window.location = href}, 600);
+          //var href = '/random'
+          //setTimeout(function() {window.location = href}, 600);
         }
         else if (one == 'vote') {
           $(this).css({
               background: '#FFFFFF',
               color: '#202020'
           });
-          var href = '/vote'
-          setTimeout(function() {window.location = href}, 600);
+          //var href = '/vote'
+          //setTimeout(function() {window.location = href}, 600);
         }
-        else{
-          alert('please select random or vote')
-        }
+        //else{
+        //  alert('please select random or vote')
+        //}
 
 
     });
@@ -160,14 +160,15 @@ $(function(){
             background: '#FFFFFF',
             color: '#202020'
         });
+        /*
         var coin = Math.random();
         var href = ''
         if (coin > 0.5) {
           var href = '/random'
         } else {
           var href = '/vote'
-        }
-        setTimeout(function() {window.location = href}, 600);
+        }*/
+        //setTimeout(function() {window.location = href}, 600);
     });
   // HIDE MOBILE MENU AFTER CLIKING ON A LINK
   $('.navbar-collapse a').click(function(){
@@ -185,9 +186,28 @@ $(function(){
     }
   });
 
+  $('#invite .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1,
+    classNames: {menu: "dropdown-menu",
+                 suggestion: "kids",
+                 dataset: "names"}
+  },
+  {
+    name: 'friends',
+    source: substringMatcher(friendslist)
+  }).on('typeahead:selected', inviteList);
 
+  function inviteList($e, datum){
+      var toadd = ' <li><label class="fbfriends checkbox-inline"><input type="checkbox" value=""><label class="chex">X</label>' + datum + '</label></li>';
+      $(".checks").append(toadd);
+      $('#invite .typeahead').typeahead('val','');
+  }
 
+  // $('.names').on("click",function(){
+  //   alert('WTF');
 
-
+  // });
 
 });

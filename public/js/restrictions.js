@@ -1,22 +1,46 @@
+window.onload = markRoomRestrictions;
+var roomName = JSON.parse(localStorage.getItem("roomRestrictions")).room_name;
+var roomRestrictions = JSON.parse(localStorage.getItem("roomRestrictions")).restrictions;
+
 $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var count=6;
 
+    $("input[type='checkbox']").change(function() {
+      console.log(roomRestrictions);
+      if($(this).prop('checked')) {
+        roomRestrictions.push({"category": $(this).val()});
+      }
 
+      var json = {
+        'room_name': roomName,
+        'category': $(this).val(),
+        'checked': $(this).prop('checked'),
+        'restrictions': roomRestrictions
+      };
+
+      $.post('/database/updateRestrictions', json, function(res) {
+          roomRestrictions = res;
+
+          var json = {
+            'room_name': roomName,
+            'restrictions': roomRestrictions
+          };
+          localStorage.setItem("roomRestrictions", JSON.stringify(json));
+			});
+    });
     // for(var i = 0; i < friendslist.length; i++) {
     //     var toadd = ' <li><label class="fbfriends checkbox-inline chex"><input type="checkbox" value=""><label>X</label>' + friendslist[i].name + '</label></li>';
     //     $(".checks").append(toadd);
     // }
 
-    $(".roll").click(function(){
+    $(".roll").click(function() {
         event.preventDefault();
 
         var restrictions = [];
-        var counter = 0;
-        $('#resList').each(function (){
-          counter++;
 
-          console.log(counter);
+        $('li .box').each(function (){
+          console.log($(this).text());
           if($(this).is(":checked")) {
             restrictions.push($(this).val());
           }
@@ -51,7 +75,7 @@ $(document).ready(function() {
 
 
 
-    function checkInput(){
+    function checkInput() {
       var input = $(".add-field-button").parent().siblings().children().val();
       console.log("input" + input);
       return $.trim(input);
@@ -59,6 +83,21 @@ $(document).ready(function() {
 
 });
 
-function addData(result){
+function addData(result) {
   console.log(result);
+}
+
+function markRoomRestrictions() {
+  var json = JSON.parse(localStorage.getItem("roomRestrictions"));
+  roomName = json.room_name;
+  roomRestrictions = json.restrictions;
+
+  $("input[type='checkbox']").each(function () {
+    //console.log($(this).val());
+    for(var i = 0; i < roomRestrictions.length; i++) {
+      if($(this).val() == roomRestrictions[i].category) {
+        $(this).prop("checked", true);
+      }
+    }
+  });
 }

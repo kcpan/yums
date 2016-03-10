@@ -1,8 +1,34 @@
+var userid;
+var username;
+var friendslist=[];
+
 $(document).ready(function() {
   initializePage();
+
+  function init(){
+    //$("#content").html("Welcome!")
+    console.log("3");
+    FB.init({
+      appId      : '776597119112980',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+    $(document).trigger("facebook:ready");
+  }
+
+  if(window.FB) {
+    console.log("1");
+    init();
+  } else {
+    console.log("2");
+    window.fbAsyncInit = init;
+  }
 });
 
-var userid;
+$(document).on("facebook:ready", function(){
+  console.log("hi");
+  setFBData();
+});
 
 function initializePage(){
   $(".loginBtn").click(function(){
@@ -33,6 +59,7 @@ function initializePage(){
     });
   });
 
+/*
   $('.fbname').bind("facebook:init", function(){
     FB.getLoginStatus(function(response) {
       if (response.status == 'connected') {
@@ -44,38 +71,16 @@ function initializePage(){
             $(".fbimage").attr("src", response.picture.data.url);
 
             console.log(response.friends.data);
-            var friendslist = response.friends.data;
-            for(var i = 0; i < friendslist.length; i++) {
-              var toadd = ' <li><label class="fbfriends checkbox-inline chex"><input type="checkbox" value=""><label>X</label>' + friendslist[i].name + '</label></li>';
-              $(".checks").append(toadd);
+            var temp = response.friends.data;
+            for(var i = 0; i < temp.length; i++) {
+              friendslist.push(temp[i].name);
             }
           }
         });
       }
     });
-  });
+  });*/
 
-  // window.onload = function(){
-  //   FB.getLoginStatus(function(response) {
-  //     if (response.status == 'connected') {
-  //       FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
-  //         console.log('Successful login for: ' + JSON.stringify(response));
-  //         if (response && !response.error) {
-  //           userid = response.id;
-  //           $(".fbname").text("Hello, " + response.name);
-  //           $(".fbimage").attr("src", response.picture.data.url);
-  //
-  //           console.log(response.friends.data);
-  //           var friendslist = response.friends.data;
-  //           for(var i = 0; i < friendslist.length; i++) {
-  //             var toadd = '<li><label class="fbfriends checkbox-inline"><input type="checkbox" value="">' + friendslist[i].name + '</label></li>';
-  //             $(".checks").append(toadd);
-  //           }
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
 }
 
 function statusChangeCallback(response) {
@@ -123,4 +128,32 @@ function logMeIn()
 
   top.location = 'https://graph.facebook.com/oauth/authorize?'+
     'client_id=776597119112980&scope=public_profile,user_friends,email&redirect_uri=http://yumsapp.herokuapp.com/home'+params;
+}
+
+function setFBData() {
+  FB.getLoginStatus(function(response) {
+    if (response.status == 'connected') {
+      FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
+        console.log('Successful login for: ' + JSON.stringify(response));
+        if (response && !response.error) {
+          username = response.name;
+          userid = response.id;
+          $(".fbname").text("Hello, " + username);
+          $(".fbimage").attr("src", response.picture.data.url);
+
+          var json = {
+            'username': username,
+            'userid': userid
+          };
+          localStorage.setItem("FBInfo", JSON.stringify(json));
+
+          console.log(response.friends.data);
+          var temp = response.friends.data;
+          for(var i = 0; i < temp.length; i++) {
+            friendslist.push(temp[i].name);
+          }
+        }
+      });
+    }
+  });
 }

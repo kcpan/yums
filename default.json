@@ -1,0 +1,23 @@
+[
+  {
+    "room_id": "UCSD",
+    "type": true,
+    "restrictions": [{"category": "hamburgers"}],
+    "votes": []
+  },
+  {
+    "room_id": "BRANDO",
+    "type": true,
+    "restrictions": [{"category": "hamburgers"},
+                     {"category": "American"}],
+    "votes": []
+  },
+  {
+    "room_id": "CSE170",
+    "type": false,
+    "restrictions": [],
+    "votes": [{"place": "McDonalds", "votes": 5},
+              {"place": "IHop", "votes": 3},
+              {"place": "KFC", "votes": 1}]
+  }
+]

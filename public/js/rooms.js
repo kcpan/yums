@@ -75,7 +75,7 @@ var roomList = [];
 										"members": memberList,
 										'restrictions': [{"category": ""}],
 										'votes': [{"place": "", "votes": 0}]
-									}
+									};
 
 									$.post('/database/create', json, function() {
 										if(type) {

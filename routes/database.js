@@ -107,3 +107,22 @@ exports.updateRoomRestriction = function(req, res) {
     }
   }
 }
+
+exports.updateRoomVoteOptions = function(req, res) {
+  var form_data = req.body;
+  console.log(form_data.votes);
+  models.Room
+    .findOneAndUpdate({"room_name": form_data.room_name},
+                      {"votes": form_data.votes},
+                      {upsert:true}, afterUpdate);
+
+  function afterUpdate(err, doc) {
+    if (err) return res.send(500, { error: err });
+    return res.send(form_data.votes);
+  }
+}
+
+exports.updateRoomVoteCount = function(req, res) {
+  var form_data = req.body;
+  
+}

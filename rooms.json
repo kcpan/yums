@@ -3,8 +3,10 @@
     "room_name": "test1",
     "type": true,
     "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
-                {"name": "Kevin Pan", "fb_id": 10153451649326608}],
-    "restrictions": [{"category": "burgers"}],
+                {"name": "Kevin Pan", "fb_id": 10153451649326608}
+               ],
+    "restrictions": [{"category": "burgers"}
+                    ],
     "votes": []
   },
   {
@@ -12,8 +14,29 @@
     "type": true,
     "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
                 {"name": "Anna Chen", "fb_id": 10153712040769667},
-                {"name": "Kerin Wu", "fb_id": 10153238710752000}],
-    "restrictions": [{"category": "bulgarian"}],
+                {"name": "Kerin Wu", "fb_id": 10153238710752000}
+               ],
+    "restrictions": [{"category": "bulgarian"}
+                    ],
     "votes": []
+  },
+  {
+    "room_name": "test3",
+    "type": false,
+    "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
+                {"name": "Kevin Pan", "fb_id": 10153451649326608},
+                {"name": "Jesse Qin", "fb_id": 10154011318231095}
+               ],
+    "restrictions": [],
+    "votes": [{"place": "Raki Raki", "votes": 2,
+                 "who": [{"name": "Kevin Pan", "fb_id": 10153451649326608},
+                         {"name": "Jesse Qin", "fb_id": 10154011318231095}
+                        ]
+              },
+              {"place": "McDonalds", "votes": 1,
+                 "who": [{"name": "Derek Tran", "fb_id": 10153295415632595}
+                        ]
+              }
+             ]
   }
 ]

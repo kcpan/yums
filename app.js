@@ -70,6 +70,7 @@ app.get('/database/join/:id', database.joinRoom);
 app.get('/database/check/:id', database.checkRoom);
 app.post('/database/create', database.createRoom);
 app.post('/database/updateRestrictions', database.updateRoomRestriction);
+app.post('/database/updateVoteOptions', database.updateRoomVoteOptions);
 // Example route
 // app.get('/users', user.list);
 

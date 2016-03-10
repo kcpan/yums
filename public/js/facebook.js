@@ -136,9 +136,16 @@ function setFBData() {
       FB.api('/me?fields=id,name,first_name,picture.width(480).height(480),friends', function(response) {
         console.log('Successful login for: ' + JSON.stringify(response));
         if (response && !response.error) {
+          username = response.name;
           userid = response.id;
-          $(".fbname").text("Hello, " + response.name);
+          $(".fbname").text("Hello, " + username);
           $(".fbimage").attr("src", response.picture.data.url);
+
+          var json = {
+            'username': username,
+            'userid': userid
+          };
+          localStorage.setItem("FBInfo", JSON.stringify(json));
 
           console.log(response.friends.data);
           var temp = response.friends.data;

@@ -123,7 +123,7 @@ function markRoomVotes() {
 
   var check = "";
   for(var i = 0; i < roomVotes.length; i++) {
-    var who = roomVotes[i].who
+    var who = roomVotes[i].who;
     for(var j = 0; j < who.length; j++) {
       if(userid == who[j].fb_id) {
         check = "checked";

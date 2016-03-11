@@ -77,7 +77,7 @@ exports.updateRoomRestriction = function(req, res) {
   var form_data = req.body;
   var oldRes = form_data.restrictions;
   console.log(form_data.done);
-  if(form_data.done){
+  if(form_data.done == "true"){
     models.Room
       .findOneAndUpdate({"room_name": form_data.room_name},
                         {"done": form_data.done,
@@ -85,25 +85,27 @@ exports.updateRoomRestriction = function(req, res) {
                         {upsert:true}, afterUpdate);
   }
   else {
-  if(form_data.checked == 'true') {
-    models.Room
-      .findOneAndUpdate({"room_name": form_data.room_name},
-                        {"restrictions": oldRes},
-                        {upsert:true}, afterUpdate);
-  }
-  else {
-    var newRes = [];
-    for(var i = 0; i < oldRes.length; i++) {
-      if(oldRes[i].category != form_data.category) {
-        newRes.push(oldRes[i]);
-      }
+    console.log("yes?");
+    if(form_data.checked == 'true') {
+      models.Room
+        .findOneAndUpdate({"room_name": form_data.room_name},
+                          {"restrictions": oldRes},
+                          {upsert:true}, afterUpdate);
     }
-    console.log(newRes);
-    models.Room
-      .findOneAndUpdate({"room_name": form_data.room_name},
-                        {"restrictions": newRes},
-                        {upsert:true}, afterUpdate);
-  }}
+    else {
+      var newRes = [];
+      for(var i = 0; i < oldRes.length; i++) {
+        if(oldRes[i].category != form_data.category) {
+          newRes.push(oldRes[i]);
+        }
+      }
+      console.log(newRes);
+      models.Room
+        .findOneAndUpdate({"room_name": form_data.room_name},
+                          {"restrictions": newRes},
+                          {upsert:true}, afterUpdate);
+    }
+  }
 
   function afterUpdate(err, doc) {
     if (err) return res.send(500, { error: err });

@@ -169,8 +169,8 @@ function executeRoll(){
   //localStorage.setItem("resJson",resJson);
   //localStorage.setItem("random-result",JSON.stringify(chosen));
 
-  $(this).css("background-color", "rgb(207, 75, 75)");
-  $(this).css("color", "rgb(255, 255, 255)");
+  $('#rdy-btn').css("background-color", "rgb(207, 75, 75)");
+  $('#rdy-btn').css("color", "rgb(255, 255, 255)");
 
   var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 

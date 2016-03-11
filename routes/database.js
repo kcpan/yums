@@ -139,3 +139,15 @@ exports.getRoomInfo = function(req, res) {
       res.json(rooms[0]);
     }
 }
+
+exports.roomRandomRoll = function(req, res) {
+  models.Room
+    .findOneAndUpdate({"room_name": form_data.room_name},
+                      {"done": true},
+                      {upsert:true}, afterUpdate);
+
+  function afterDone(err, doc) {
+    if (err) return res.send(500, { error: err });
+    return res.send('done');
+  }
+}

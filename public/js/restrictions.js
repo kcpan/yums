@@ -39,40 +39,8 @@ $(document).ready(function() {
     $(".roll").click(function() {
         event.preventDefault();
 
-        var restrictions = [];
-
-        $('li .box').each(function (){
-          console.log($(this).text());
-          if($(this).is(":checked")) {
-            restrictions.push($(this).val());
-          }
-        });
-
-        var chosen = {};
-        var resJson = JSON.stringify(restrictions);
-        console.log(resJson);
-        localStorage.setItem("resJson",resJson);
-        localStorage.setItem("random-result",JSON.stringify(chosen));
-
-        $(this).css("background-color", "rgb(207, 75, 75)");
-        $(this).css("color", "rgb(255, 255, 255)");
-
-        var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-
-        function timer()
-        {
-          count=count-1;
-
-          if (count <= 0)
-          {
-             clearInterval(counter);
-             //counter ended, do something here
-             window.location = "/rand-result";
-          }
-
-          //Do code for showing the number of seconds here
-           $(".roll").text(count); // watch for spelling
-        }
+        $.get('/database/updateRestrictions');
+        executeRoll();
     });
 
     function checkInput() {
@@ -90,6 +58,7 @@ function addData(result) {
 
 function markRoomRestrictions() {
   var json = JSON.parse(localStorage.getItem("roomRestrictions"));
+  console.log(json);
   roomName = json.room_name;
   roomMaster = json.master;
   roomUser = json.fb_id;
@@ -97,6 +66,7 @@ function markRoomRestrictions() {
 
   if(roomUser != roomMaster.fb_id) {
     $('#rdy-btn').hide();
+    $('#rdy-btn').disabled = true;
   }
 
   $("input[type='checkbox']").each(function () {
@@ -113,6 +83,11 @@ function updateRoomRestrictions() {
   function updateInfo(room_json) {
     console.log(room_json);
     roomRestrictions = room_json.restrictions;
+    var done = room_json.done;
+
+    if(done) {
+      executeRoll();
+    }
 
     $("input[type='checkbox']").each(function () {
       //console.log($(this).val());
@@ -125,4 +100,41 @@ function updateRoomRestrictions() {
   }
 
   $.get('/database/info/' + roomName, updateInfo);
+}
+
+function executeRoll(){
+  var restrictions = [];
+
+  $('li .box').each(function (){
+    console.log($(this).text());
+    if($(this).is(":checked")) {
+      restrictions.push($(this).val());
+    }
+  });
+
+  var chosen = {};
+  var resJson = JSON.stringify(restrictions);
+  console.log(resJson);
+  localStorage.setItem("resJson",resJson);
+  localStorage.setItem("random-result",JSON.stringify(chosen));
+
+  $(this).css("background-color", "rgb(207, 75, 75)");
+  $(this).css("color", "rgb(255, 255, 255)");
+
+  var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+  function timer()
+  {
+    count=count-1;
+
+    if (count <= 0)
+    {
+       clearInterval(counter);
+       //counter ended, do something here
+       window.location = "/rand-result";
+    }
+    $('#rdy-btn').show();
+    //Do code for showing the number of seconds here
+     $(".roll").text(count); // watch for spelling
+  }
 }

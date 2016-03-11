@@ -89,7 +89,7 @@ function addData(result) {
   console.log(chosenJson);
   $.post('/database/updateRestrictions', json, function(res) {
       roomRestrictions = res;
-
+      console.log(roomMaster);
       var json = {
         'room_name': roomName,
         'master': roomMaster,
@@ -107,7 +107,7 @@ function addData(result) {
 function markRoomRestrictions() {
   var json = JSON.parse(localStorage.getItem("roomRestrictions"));
   roomName = json.room_name;
-  roomMaster = json.master.fb_id;
+  roomMaster = json.master;
   roomUser = json.fb_id;
   roomRestrictions = json.restrictions;
   if(roomUser != roomMaster) {
@@ -127,7 +127,6 @@ function markRoomRestrictions() {
 
 function updateRoomRestrictions() {
   function updateInfo(room_json) {
-    console.log(room_json);
     roomRestrictions = room_json.restrictions;
     var done = room_json.done;
 
@@ -137,7 +136,6 @@ function updateRoomRestrictions() {
       rolled = true;
       executeRoll();
       clearInterval(update);
-      console.log("update");
     }
 
     $("input[type='checkbox']").each(function () {
@@ -154,7 +152,6 @@ function updateRoomRestrictions() {
 }
 
 function executeRoll(){
-  $('#rdy-btn').show();
   $('#rdy-btn').disabled = true;
   /*
   $('li .box').each(function (){
@@ -169,8 +166,8 @@ function executeRoll(){
   //localStorage.setItem("resJson",resJson);
   //localStorage.setItem("random-result",JSON.stringify(chosen));
 
-  $(this).css("background-color", "rgb(207, 75, 75)");
-  $(this).css("color", "rgb(255, 255, 255)");
+  $('#rdy-btn').css("background-color", "rgb(207, 75, 75)");
+  $('#rdy-btn').css("color", "rgb(255, 255, 255)");
 
   var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 
@@ -185,6 +182,7 @@ function executeRoll(){
        window.location = "/rand-result";
     }
     //Do code for showing the number of seconds here
+     $('#rdy-btn').show();
      $(".roll").text(count); // watch for spelling
   }
 }

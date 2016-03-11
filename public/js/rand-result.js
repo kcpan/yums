@@ -1,9 +1,14 @@
-var loopAmount = 1;
-
 window.onload = addData;
+var loopAmount = 3;
+var curChosen = [];
+var roomName;
+var roomMaster;
+var roomUser;
+var roomRestrictions;
 
 $(document).ready(function() {
   initializePage();
+  setInterval(updateRoomResults, 1000);
 });
 
 function searchYelp(){
@@ -14,8 +19,10 @@ function addData(){
   $('.data').removeClass('sk-spinner sk-spinner-pulse');
 
   var chosen = JSON.parse(localStorage.getItem("random-result"));
+
   for(var i = 0; i < 3; i++) {
     console.log(chosen[i]);
+    curChosen.push(chosen[i]);
     parseData(chosen[i]);
   }
   /*
@@ -39,8 +46,16 @@ function addData(){
     parseData(chosen);
   }
   localStorage.setItem("random-result",JSON.stringify(chosen));*/
-
+  var json = JSON.parse(localStorage.getItem("roomRestrictions"));
+  roomName = json.room_name;
+  roomMaster = json.master;
+  roomUser = json.fb_id;
+  roomRestrictions = json.restrictions;
+  console.log(roomUser);
+  console.log(roomMaster);
+  if(roomUser == roomMaster) {
     $('.reCont').append('<a href="#" class="btn btn-default reroll">Re-Roll</a>');
+  }
 
     $('.reroll').on("click",function(){
       $.get("/yelpsearch/3?term=food&city=La%20Jolla", reRoll);
@@ -61,7 +76,28 @@ function reRoll(result){
 
     parseData(chosen);
   }
-  localStorage.setItem("random-result",JSON.stringify(chosen));
+  localStorage.setItem("random-result",JSON.stringify(chosenJson));
+
+  var json = {
+    'room_name': roomName,
+    'done': true,
+    'category': "",
+    'checked': false,
+    'restrictions': roomRestrictions,
+    'results': chosenJson
+  };
+  console.log(chosenJson);
+  $.post('/database/updateRestrictions', json, function(res) {
+      roomRestrictions = res;
+
+      var json = {
+        'room_name': roomName,
+        'master': roomMaster,
+        'fb_id': roomUser,
+        'restrictions': roomRestrictions
+      };
+      localStorage.setItem("roomRestrictions", JSON.stringify(json));
+  });
 }
 
 function filter(result){
@@ -134,6 +170,30 @@ function parseData(chosen){
     // $('.data').append(addedHTML);
     // $('.yelp').attr("href", url);
 
+}
+
+function updateRoomResults() {
+  function updateInfo(room_json) {
+    var change = false;
+    var chosen = room_json.results;
+    for(var i = 0; i < 3; i++) {
+      if(chosen[i] != curChosen[i]) {
+        change = true;
+      }
+    }
+
+    if(change) {
+      $('#winnerHolder').replaceWith('<div id="winnerHolder" class="col-xs-12"></div>');
+      for(var i = 0; i < 3; i++) {
+        if(chosen[i] != curChosen[i]) {
+          curChosen[i] = chosen[i];
+          parseData(chosen[i]);
+        }
+      }
+    }
+  }
+
+  $.get('/database/info/' + roomName, updateInfo);
 }
 
 function initializePage() {

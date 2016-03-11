@@ -84,7 +84,7 @@ var roomList = [];
 										if(type) {
                       var json = {
                         'room_name': roomName,
-                        'master': {"name": username, "fb_id": userid},
+                        'master': userid,
                         'fb_id': userid,
                         'restrictions': [{"category": ""}]
                       };
@@ -94,7 +94,7 @@ var roomList = [];
 										else {
                       var json = {
                         'room_name': roomName,
-                        'master': {"name": username, "fb_id": userid},
+                        'master': userid,
                         'fb_id': userid,
                         'votes': [{"place": "", "votes": 0}]
                       };
@@ -150,7 +150,7 @@ var roomList = [];
 										var restrictions = room_json['restrictions'];
 										var json = {
                       'room_name': name,
-                      'master': master,
+                      'master': master.fb_id,
                       'fb_id': userid,
                       'restrictions': restrictions
                     };
@@ -167,7 +167,7 @@ var roomList = [];
 										var votes = room_json['votes'];
                     var json = {
                       'room_name': name,
-                      'master': master,
+                      'master': master.fb_id,
                       'fb_id': userid,
                       'votes': votes
                     };

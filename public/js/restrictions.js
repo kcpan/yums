@@ -4,6 +4,11 @@ var roomMaster = JSON.parse(localStorage.getItem("roomRestrictions")).master;
 var roomUser = JSON.parse(localStorage.getItem("roomRestrictions")).fb_id;
 var roomRestrictions = JSON.parse(localStorage.getItem("roomRestrictions")).restrictions;
 
+var count=6;
+var rolled = false;
+var update;
+var restrictions = [];
+
 $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var count=6;
@@ -41,8 +46,13 @@ $(document).ready(function() {
 
     $(".roll").click(function() {
         event.preventDefault();
+        $("input[type='checkbox']").each(function (){
+          if($(this).is(":checked")) {
+            restrictions.push($(this).val());
+          }
+        });
         $.get("/yelpsearch/3?term=food&city=La%20Jolla", addData);
-        executeRoll();
+        //executeRoll();
     });
 
     function checkInput() {
@@ -51,21 +61,32 @@ $(document).ready(function() {
       return $.trim(input);
     }
 
-    setInterval(updateRoomRestrictions, 1000);
+    update = setInterval(updateRoomRestrictions, 1000);
 });
 
 function addData(result) {
-  var chosen = filter(result);
-  localStorage.setItem("random-result",JSON.stringify(chosen));
+  var chosen;// = filter(result);
+  var chosenJson = [];
+  for(var i = 0; i < 3; i++) {
+    chosen = filter(result);
+
+    while($.inArray(chosen, chosenJson) != -1) {
+      chosen = filter(result);
+    }
+    chosenJson.push(chosen);
+  }
+  localStorage.setItem("random-result",JSON.stringify(chosenJson));
+  //localStorage.setItem("random-result",JSON.stringify(chosen));
   //$.get('/database/roll');
   var json = {
     'room_name': roomName,
     'done': true,
     'category': "",
     'checked': false,
-    'restrictions': roomRestrictions
+    'restrictions': roomRestrictions,
+    'results': chosenJson
   };
-
+  console.log(chosenJson);
   $.post('/database/updateRestrictions', json, function(res) {
       roomRestrictions = res;
 
@@ -77,7 +98,10 @@ function addData(result) {
       };
       localStorage.setItem("roomRestrictions", JSON.stringify(json));
   });
+  rolled = true;
   executeRoll();
+  clearInterval(update);
+  console.log("rol");
 }
 
 function markRoomRestrictions() {
@@ -109,8 +133,13 @@ function updateRoomRestrictions() {
     roomRestrictions = room_json.restrictions;
     var done = room_json.done;
 
-    if(done) {
+    if(roomUser != roomMaster.fb_id && rolled == false && done) {
+      var chosen = room_json.results;
+      localStorage.setItem("random-result",JSON.stringify(chosen));
+      rolled = true;
       executeRoll();
+      clearInterval(update);
+      console.log("update");
     }
 
     $("input[type='checkbox']").each(function () {
@@ -127,8 +156,9 @@ function updateRoomRestrictions() {
 }
 
 function executeRoll(){
-  var restrictions = [];
-
+  $('#rdy-btn').show();
+  $('#rdy-btn').disabled = true;
+  /*
   $('li .box').each(function (){
     console.log($(this).text());
     if($(this).is(":checked")) {
@@ -136,11 +166,10 @@ function executeRoll(){
     }
   });
 
-  var chosen = {};
-  var resJson = JSON.stringify(restrictions);
-  console.log(resJson);
-  localStorage.setItem("resJson",resJson);
-  localStorage.setItem("random-result",JSON.stringify(chosen));
+  //var chosen = {};
+  var resJson = JSON.stringify(restrictions);*/
+  //localStorage.setItem("resJson",resJson);
+  //localStorage.setItem("random-result",JSON.stringify(chosen));
 
   $(this).css("background-color", "rgb(207, 75, 75)");
   $(this).css("color", "rgb(255, 255, 255)");
@@ -157,7 +186,6 @@ function executeRoll(){
        //counter ended, do something here
        window.location = "/rand-result";
     }
-    $('#rdy-btn').show();
     //Do code for showing the number of seconds here
      $(".roll").text(count); // watch for spelling
   }
@@ -165,8 +193,8 @@ function executeRoll(){
 
 function filter(result){
   var chosen;
-  var restr = JSON.parse(localStorage.getItem("resJson"));
-  console.log(restr);
+  //var restr = JSON.parse(localStorage.getItem("resJson"));
+  //console.log(restr);
 
   console.log(result);
   var businesses = result['businesses'];
@@ -187,8 +215,8 @@ function filter(result){
       }
     }
 
-    for(var i=0; i<restr.length; i++) {
-      if(tags.search(restr[i]) != -1) {
+    for(var i=0; i<restrictions.length; i++) {
+      if(tags.search(restrictions[i]) != -1) {
         console.log("conflict!");
         done = false;
       }

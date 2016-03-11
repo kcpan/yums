@@ -9,7 +9,8 @@
                ],
     "restrictions": [{"category": "japanese"}
                     ],
-    "votes": []
+    "votes": [],
+    "results": []
   },
   {
     "room_name": "test2",
@@ -22,7 +23,8 @@
                ],
     "restrictions": [{"category": "korean"}
                     ],
-    "votes": []
+    "votes": [],
+    "results": []
   },
   {
     "room_name": "test3",
@@ -43,6 +45,7 @@
                  "who": [{"name": "Derek Tran", "fb_id": 10153295415632595}
                         ]
               }
-             ]
+             ],
+    "results": []
   }
 ]

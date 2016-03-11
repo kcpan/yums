@@ -76,11 +76,12 @@ exports.getRooms = function(req, res) {
 exports.updateRoomRestriction = function(req, res) {
   var form_data = req.body;
   var oldRes = form_data.restrictions;
-
-  if(done){
+  console.log(form_data.done);
+  if(form_data.done){
     models.Room
       .findOneAndUpdate({"room_name": form_data.room_name},
-                        {"done": form_data.done},
+                        {"done": form_data.done,
+                         "results": form_data.results},
                         {upsert:true}, afterUpdate);
   }
   else {

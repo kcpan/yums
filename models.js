@@ -10,7 +10,8 @@ var RoomSchema = new Mongoose.Schema({
   "master": {"name": String, "fb_id": Number},
   "members": [{"name": String, "fb_id": Number}],
   "restrictions": [{"category": String}],
-  "votes": [{"place": String, "votes": Number, "who": [{"name": String, "fb_id": Number}]}]
+  "votes": [{"place": String, "votes": Number, "who": [{"name": String, "fb_id": Number}]}],
+  "results": [Mongoose.Schema.Types.Mixed]
 });
 
 exports.Room = Mongoose.model('Room', RoomSchema);

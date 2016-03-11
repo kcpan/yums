@@ -72,10 +72,12 @@ var roomList = [];
 									var json = {
 										'room_name': roomName,
 										'type': type,
+                    'done': false,
                     'master': {"name": username, "fb_id": userid},
 										"members": memberList,
 										'restrictions': [{"category": ""}],
-										'votes': [{"place": "", "votes": 0}]
+										'votes': [{"place": "", "votes": 0}],
+                    'results': {}
 									};
 
 									$.post('/database/create', json, function() {
@@ -125,6 +127,8 @@ var roomList = [];
 				var type = room_json['type'];
         var master = room_json['master'];
 				var members = room_json['members'];
+        var done = room_json['done'];
+        var chosen = room_json['results'];
 				var isin = false;
 
 				FB.getLoginStatus(function(response) {
@@ -151,7 +155,13 @@ var roomList = [];
                       'restrictions': restrictions
                     }
 										localStorage.setItem("roomRestrictions", JSON.stringify(json));
-										setTimeout(function() {window.location = '/random'}, 600);
+                    if(done) {
+                      localStorage.setItem("random-result",JSON.stringify(chosen));
+                      setTimeout(function() {window.location = '/rand-result'}, 600);
+                    }
+                    else {
+                      setTimeout(function() {window.location = '/random'}, 600);
+                    }
 									}
 									else {
 										var votes = room_json['votes'];
@@ -162,7 +172,13 @@ var roomList = [];
                       'votes': votes
                     }
 										localStorage.setItem("roomVotes", JSON.stringify(json));
-										setTimeout(function() {window.location = '/vote'}, 600);
+                    if(done) {
+                      localStorage.setItem("vote-result",JSON.stringify(chosen));
+                      setTimeout(function() {window.location = '/vote-result'}, 600);
+                    }
+                    else {
+										  setTimeout(function() {window.location = '/vote'}, 600);
+                    }
 									}
 								}
 								else {

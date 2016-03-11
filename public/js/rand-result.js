@@ -1,6 +1,6 @@
 var loopAmount = 1;
 
-window.onload = searchYelp;
+window.onload = addData;
 
 $(document).ready(function() {
   initializePage();
@@ -10,11 +10,15 @@ function searchYelp(){
   $.get("/yelpsearch/3?term=food&city=La%20Jolla", addData);
 }
 
-function addData(result){
+function addData(){
   $('.data').removeClass('sk-spinner sk-spinner-pulse');
 
   var chosen = JSON.parse(localStorage.getItem("random-result"));
-
+  for(var i = 0; i < 3; i++) {
+    console.log(chosen[i]);
+    parseData(chosen[i]);
+  }
+  /*
   if(jQuery.isEmptyObject(chosen)) {
     chosen = filter(result);
   }
@@ -34,7 +38,7 @@ function addData(result){
 
     parseData(chosen);
   }
-  localStorage.setItem("random-result",JSON.stringify(chosen));
+  localStorage.setItem("random-result",JSON.stringify(chosen));*/
 
     $('.reCont').append('<a href="#" class="btn btn-default reroll">Re-Roll</a>');
 

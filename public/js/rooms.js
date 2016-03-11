@@ -87,7 +87,7 @@ var roomList = [];
                         'master': {"name": username, "fb_id": userid},
                         'fb_id': userid,
                         'restrictions': [{"category": ""}]
-                      }
+                      };
   										localStorage.setItem("roomRestrictions", JSON.stringify(json));
 											setTimeout(function() {window.location = '/random'}, 600);
 										}
@@ -97,7 +97,7 @@ var roomList = [];
                         'master': {"name": username, "fb_id": userid},
                         'fb_id': userid,
                         'votes': [{"place": "", "votes": 0}]
-                      }
+                      };
   										localStorage.setItem("roomVotes", JSON.stringify(json));
 											setTimeout(function() {window.location = '/vote'}, 600);
 										}
@@ -153,7 +153,7 @@ var roomList = [];
                       'master': master,
                       'fb_id': userid,
                       'restrictions': restrictions
-                    }
+                    };
 										localStorage.setItem("roomRestrictions", JSON.stringify(json));
                     if(done) {
                       localStorage.setItem("random-result",JSON.stringify(chosen));
@@ -170,7 +170,7 @@ var roomList = [];
                       'master': master,
                       'fb_id': userid,
                       'votes': votes
-                    }
+                    };
 										localStorage.setItem("roomVotes", JSON.stringify(json));
                     if(done) {
                       localStorage.setItem("vote-result",JSON.stringify(chosen));

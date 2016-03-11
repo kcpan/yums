@@ -106,12 +106,10 @@ function addData(result) {
 
 function markRoomRestrictions() {
   var json = JSON.parse(localStorage.getItem("roomRestrictions"));
-  console.log(json);
   roomName = json.room_name;
-  roomMaster = json.master;
+  roomMaster = json.master.fb_id;
   roomUser = json.fb_id;
   roomRestrictions = json.restrictions;
-
   if(roomUser != roomMaster.fb_id) {
     $('#rdy-btn').hide();
     $('#rdy-btn').disabled = true;

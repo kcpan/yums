@@ -2,6 +2,7 @@
   {
     "room_name": "test1",
     "type": true,
+    "master": {"name": "Derek Tran", "fb_id": 10153295415632595},
     "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
                 {"name": "Kevin Pan", "fb_id": 10153451649326608}
                ],
@@ -12,6 +13,7 @@
   {
     "room_name": "test2",
     "type": true,
+    "master": {"name": "Derek Tran", "fb_id": 10153295415632595},
     "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
                 {"name": "Anna Chen", "fb_id": 10153712040769667},
                 {"name": "Kerin Wu", "fb_id": 10153238710752000}
@@ -23,6 +25,7 @@
   {
     "room_name": "test3",
     "type": false,
+    "master": {"name": "Derek Tran", "fb_id": 10153295415632595},
     "members": [{"name": "Derek Tran", "fb_id": 10153295415632595},
                 {"name": "Kevin Pan", "fb_id": 10153451649326608},
                 {"name": "Jesse Qin", "fb_id": 10154011318231095}

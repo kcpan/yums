@@ -1,5 +1,7 @@
 window.onload = markRoomRestrictions;
 var roomName = JSON.parse(localStorage.getItem("roomRestrictions")).room_name;
+var roomMaster = JSON.parse(localStorage.getItem("roomRestrictions")).master;
+var roomUser = JSON.parse(localStorage.getItem("roomRestrictions")).fb_id;
 var roomRestrictions = JSON.parse(localStorage.getItem("roomRestrictions")).restrictions;
 
 $(document).ready(function() {
@@ -89,7 +91,13 @@ function addData(result) {
 function markRoomRestrictions() {
   var json = JSON.parse(localStorage.getItem("roomRestrictions"));
   roomName = json.room_name;
+  roomMaster = json.master;
+  roomUser = json.fb_id;
   roomRestrictions = json.restrictions;
+
+  if(roomUser != roomMaster.fb_id) {
+    $('#rdy-btn').hide();
+  }
 
   $("input[type='checkbox']").each(function () {
     //console.log($(this).val());

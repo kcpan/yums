@@ -72,6 +72,7 @@ var roomList = [];
 									var json = {
 										'room_name': roomName,
 										'type': type,
+                    'master': {"name": username, "fb_id": userid},
 										"members": memberList,
 										'restrictions': [{"category": ""}],
 										'votes': [{"place": "", "votes": 0}]
@@ -81,6 +82,8 @@ var roomList = [];
 										if(type) {
                       var json = {
                         'room_name': roomName,
+                        'master': {"name": username, "fb_id": userid},
+                        'fb_id': userid,
                         'restrictions': [{"category": ""}]
                       }
   										localStorage.setItem("roomRestrictions", JSON.stringify(json));
@@ -89,6 +92,8 @@ var roomList = [];
 										else {
                       var json = {
                         'room_name': roomName,
+                        'master': {"name": username, "fb_id": userid},
+                        'fb_id': userid,
                         'votes': [{"place": "", "votes": 0}]
                       }
   										localStorage.setItem("roomVotes", JSON.stringify(json));
@@ -118,6 +123,7 @@ var roomList = [];
 			function joinOrDeny(room_json) {
         var name = room_json['room_name'];
 				var type = room_json['type'];
+        var master = room_json['master'];
 				var members = room_json['members'];
 				var isin = false;
 
@@ -140,6 +146,8 @@ var roomList = [];
 										var restrictions = room_json['restrictions'];
 										var json = {
                       'room_name': name,
+                      'master': master,
+                      'fb_id': userid,
                       'restrictions': restrictions
                     }
 										localStorage.setItem("roomRestrictions", JSON.stringify(json));
@@ -149,6 +157,8 @@ var roomList = [];
 										var votes = room_json['votes'];
                     var json = {
                       'room_name': name,
+                      'master': master,
+                      'fb_id': userid,
                       'votes': votes
                     }
 										localStorage.setItem("roomVotes", JSON.stringify(json));

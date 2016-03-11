@@ -1,8 +1,8 @@
 window.onload = markRoomRestrictions;
-var roomName = JSON.parse(localStorage.getItem("roomRestrictions")).room_name;
-var roomMaster = JSON.parse(localStorage.getItem("roomRestrictions")).master;
-var roomUser = JSON.parse(localStorage.getItem("roomRestrictions")).fb_id;
-var roomRestrictions = JSON.parse(localStorage.getItem("roomRestrictions")).restrictions;
+var roomName;
+var roomMaster;
+var roomUser;
+var roomRestrictions;
 
 var count=6;
 var rolled = false;
@@ -110,7 +110,7 @@ function markRoomRestrictions() {
   roomMaster = json.master.fb_id;
   roomUser = json.fb_id;
   roomRestrictions = json.restrictions;
-  if(roomUser != roomMaster.fb_id) {
+  if(roomUser != roomMaster) {
     $('#rdy-btn').hide();
     $('#rdy-btn').disabled = true;
   }

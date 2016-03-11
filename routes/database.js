@@ -38,9 +38,12 @@ exports.createRoom = function(req, res) {
    var newRoom = new models.Room({
      "room_name": form_data.room_name,
      "type": form_data.type,
+     "done": false,
+     "master": form_data.master,
      "members": form_data.members,
      "restrictions": form_data.restrictions,
-     "votes": form_data.votes
+     "votes": form_data.votes,
+     "results": form_data.results
    })
 
    newRoom.save(afterSaving);

@@ -77,6 +77,13 @@ exports.updateRoomRestriction = function(req, res) {
   var form_data = req.body;
   var oldRes = form_data.restrictions;
 
+  if(done){
+    models.Room
+      .findOneAndUpdate({"room_name": form_data.room_name},
+                        {"done": form_data.done},
+                        {upsert:true}, afterUpdate);
+  }
+  else {
   if(form_data.checked == 'true') {
     models.Room
       .findOneAndUpdate({"room_name": form_data.room_name},
@@ -95,7 +102,7 @@ exports.updateRoomRestriction = function(req, res) {
       .findOneAndUpdate({"room_name": form_data.room_name},
                         {"restrictions": newRes},
                         {upsert:true}, afterUpdate);
-  }
+  }}
 
   function afterUpdate(err, doc) {
     if (err) return res.send(500, { error: err });

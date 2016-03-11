@@ -16,6 +16,7 @@ $(document).ready(function() {
 
       var json = {
         'room_name': roomName,
+        'done': false,
         'category': $(this).val(),
         'checked': $(this).prop('checked'),
         'restrictions': roomRestrictions
@@ -26,6 +27,8 @@ $(document).ready(function() {
 
           var json = {
             'room_name': roomName,
+            'master': roomMaster,
+            'fb_id': roomUser,
             'restrictions': roomRestrictions
           };
           localStorage.setItem("roomRestrictions", JSON.stringify(json));
@@ -38,8 +41,7 @@ $(document).ready(function() {
 
     $(".roll").click(function() {
         event.preventDefault();
-
-        $.get('/database/updateRestrictions');
+        $.get("/yelpsearch/3?term=food&city=La%20Jolla", addData);
         executeRoll();
     });
 
@@ -53,7 +55,29 @@ $(document).ready(function() {
 });
 
 function addData(result) {
-  console.log(result);
+  var chosen = filter(result);
+  localStorage.setItem("random-result",JSON.stringify(chosen));
+  //$.get('/database/roll');
+  var json = {
+    'room_name': roomName,
+    'done': true,
+    'category': "",
+    'checked': false,
+    'restrictions': roomRestrictions
+  };
+
+  $.post('/database/updateRestrictions', json, function(res) {
+      roomRestrictions = res;
+
+      var json = {
+        'room_name': roomName,
+        'master': roomMaster,
+        'fb_id': roomUser,
+        'restrictions': roomRestrictions
+      };
+      localStorage.setItem("roomRestrictions", JSON.stringify(json));
+  });
+  executeRoll();
 }
 
 function markRoomRestrictions() {
@@ -137,4 +161,39 @@ function executeRoll(){
     //Do code for showing the number of seconds here
      $(".roll").text(count); // watch for spelling
   }
+}
+
+function filter(result){
+  var chosen;
+  var restr = JSON.parse(localStorage.getItem("resJson"));
+  console.log(restr);
+
+  console.log(result);
+  var businesses = result['businesses'];
+
+  var done = false;
+  while(!done) {
+    chosen = businesses[Math.floor(businesses.length * Math.random())];
+
+    done = true;
+    var categories = chosen.categories;
+    var tags = "";
+
+    for(var i=0; i<categories.length; i++) {
+      var inner = categories[i];
+
+      for(var j=0; j<inner.length; j++) {
+        tags = tags.concat(inner[j] + " ");
+      }
+    }
+
+    for(var i=0; i<restr.length; i++) {
+      if(tags.search(restr[i]) != -1) {
+        console.log("conflict!");
+        done = false;
+      }
+    }
+  }
+
+  return chosen;
 }
